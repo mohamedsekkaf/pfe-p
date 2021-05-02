@@ -67,7 +67,7 @@ label{
         display: none;
     }
 }
-#id{
+#input{
     background-color: rgb(146, 146, 146);
     box-shadow:  1px 1px 1px 1px rgba(0,0,0,.075);
     border:1px solid #f1f2f7;

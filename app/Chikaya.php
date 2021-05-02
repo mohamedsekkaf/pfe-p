@@ -8,6 +8,14 @@ class Chikaya extends Model
 {
     public $table="chikayas";
     protected $fillable = [
-        'id','name','firstname','cin', 'email', 'sujet_principal','objet','message',
+        'id','nom','prenom','cin','telephone','email','addresse',
+        'region','province','nom_departement',
+        'reclamation','texte_reclamation',
+        'check'
     ];
+
+
+
+
+
 }

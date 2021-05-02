@@ -15,13 +15,21 @@ class CreateChikayasTable extends Migration
     {
         Schema::create('chikayas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('firstname');
+            $table->string('nom');
+            $table->string('prenom');
             $table->string('cin');
+            $table->string('telephone');
             $table->string('email');
-            $table->string('sujet_principal');
-            $table->string('objet');
-            $table->string('message');
+            $table->string('addresse');
+
+            $table->string('region');
+            $table->string('province');
+            $table->string('nom_departement');
+
+            $table->string('reclamation');
+            $table->string('texte_reclamation');
+
+            $table->string('check');
             $table->timestamps();
         });
     }
