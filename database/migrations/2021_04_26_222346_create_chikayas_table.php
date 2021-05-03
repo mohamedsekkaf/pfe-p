@@ -27,7 +27,7 @@ class CreateChikayasTable extends Migration
             $table->string('nom_departement');
 
             $table->string('reclamation');
-            $table->string('texte_reclamation');
+            $table->string('texte_reclamation',5000);
 
             $table->string('check');
             $table->timestamps();

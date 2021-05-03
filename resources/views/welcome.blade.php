@@ -44,7 +44,7 @@
                             <table>
                                 <tr>
                                     <td class="td1">Telephone</td>
-                                    <td class="td2"><input placeholder="Telephone" name="telephone" id="input4" type="text" class="form-control" required> <label id="lab4" style="color:red;"></label></td>
+                                    <td class="td2"><input placeholder="Telephone" name="telephone" id="input4" type="number" class="form-control" required> <label id="lab4" style="color:red;"></label></td>
                                 </tr>
                             </table>
                             <br>

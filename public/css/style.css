@@ -37,8 +37,7 @@ ul li a{
     font-size: 25px;
     color: white;
     padding: 10px 10px;
-    background-color: rgb(212, 0, 255);
-    border-radius: 10px;
+    background-image: linear-gradient(to left top, #009eff, #00b2ff, #00c5ff, #00d7ff, #1ae7ff);    border-radius: 10px;
     text-decoration: none;
 }
 ul li a:hover{
@@ -170,4 +169,11 @@ table{
 .chikaya1{
     width: 100px;
     
+}
+#submit{
+    padding: 10px 40px;
+    background-image: linear-gradient(to left top, #009eff, #00b2ff, #00c5ff, #00d7ff, #1ae7ff);
+    border: none;
+    font-size: 20px;
+    border-radius: 10px;
 }
