@@ -31,7 +31,10 @@
                                     <td> <i style="color:green;">Nom et Prénom</i>  : {{$ch->nom}} {{$ch->prenom}}</td>
                                     <td><i style="color:green;">CIN</i> : {{$ch->cin}}</td>
                                 </tr>
-                                
+                                <tr>
+                                    <td><i style="color:green;">Province : </i>{{$ch->province}}</td>
+                                    <td><i style="color:green;">Département : </i>{{$ch->nom_departement}}</td>
+                                </tr>
                             </table>
                         </td>
                     </tr>
