@@ -10,14 +10,12 @@
         <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
     </head>
-
     <body>
     <nav>
         <label translate="no"><a href="{{url('/')}}" class="logo">Chikaya</a> </label>
         <ul>
             @guest
             <li><a href="{{ route('login') }}">Login</a></li>
-            <li><a href="{{ route('register') }}">Register</a></li>
             @else
             <li><a href="{{url('/home')}}">{{Auth::user()->name}}</a></li>
             <li><a href="{{ route('logout') }}">Logout</a></li>
