@@ -68,4 +68,8 @@ class Controller extends BaseController
         Auth::logout();
         return redirect('/');
       }
+      public function show($departement){
+          $chikaya = Chikaya::where('nom_departement',$departement)->get();
+          return view('/details',compact('chikaya'));
+      }
 }

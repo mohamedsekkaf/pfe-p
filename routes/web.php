@@ -20,4 +20,5 @@ Route::get('/succes','Controller@succes');
 Route::group(['middleware' => ['auth']], function(){
 Route::get('/home','Controller@home');
 Route::get('logout', 'Controller@logout');
+Route::get('/details/{departement}','Controller@show');
 });

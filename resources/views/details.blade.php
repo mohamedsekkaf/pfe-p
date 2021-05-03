@@ -3,20 +3,20 @@
 <div class="">
     <div class="left">
         <br>
-        <button class="btn1"><a href="{{url('/home')}}" style="text-decoration:none; color:black;">Accueil</a> </button>
+        <button class="btn1"><a href="{{url('/home')}}" style="text-decoration:none; color:black;">Accueil</a></button>
         <br><br>
-        <button class="btn1"><a href="{{url('/details/Département économique')}}" style="text-decoration:none; color:black;"> Département économique</a></button>
+        <button class="btn1"> <a href="{{url('/details/Département économique')}}" style="text-decoration:none; color:black;">Département économique</a> </button>
         <br><br>
-        <button class="btn1"> <a href="{{url('/details/Département de l environnement')}}" style="text-decoration:none; color:black;">Département de l'environnement</a></button>
+        <button class="btn1"><a href="{{url('/details/Département de l environnement')}}" style="text-decoration:none; color:black;">Département de l'environnement</button>
         <br><br>
-        <button class="btn1"> <a href="{{url('/details/département de santé')}}" style="text-decoration:none; color:black;">département de santé</a></button>
+        <button class="btn1"><a href="{{url('/details/département de santé')}}" style="text-decoration:none; color:black;">département de santé</button>
         <br><br>
-        <button class="btn1"> <a href="{{url('/details/Département des sports')}}" style="text-decoration:none; color:black;">Département des sports</a></button>
+        <button class="btn1"><a href="{{url('/details/Département des sports')}}" style="text-decoration:none; color:black;">Département des sports</button>
         <br><br>
-        <button class="btn1"> <a href="{{url('/Département de la police administrative')}}" style="text-decoration:none; color:black;">Département de la police administrative</a></button>
+        <button class="btn1"><a href="{{url('/details/Département de la police administrative')}}" style="text-decoration:none; color:black;">Département de la police administrative</button>
     </div>
     <div class="main">
-        <h1 class="title">Les Réclamation</h1>
+    <h1 class="title">Les Réclamation</h1>
         @foreach($chikaya as $ch)
         <br>
         <div class="card">
@@ -49,3 +49,4 @@
     </div>
 </div>
 @endsection('content')
+

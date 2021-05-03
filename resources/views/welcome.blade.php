@@ -96,9 +96,11 @@
                                     <td class="td1">Nom du département</td>
                                     <td class="td2">
                                         <select name="nom_departement" id="input9" class="form-control" name="" id="" required>
-                                            <option>option1</option>
-                                            <option>option2</option>
-                                            <option>option3</option>
+                                            <option>Département économique</option>
+                                            <option>Département de l environnement</option>
+                                            <option>département de santé</option>
+                                            <option>Département des sports</option>
+                                            <option>Département de la police administrative</option>
                                         </select><label id="lab9" style="color:red;"></label>
                                     </td>
                                 </tr>
