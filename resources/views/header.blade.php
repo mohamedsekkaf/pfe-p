@@ -15,12 +15,19 @@
     <nav>
         <label translate="no"><a href="{{url('/')}}" class="logo">Chikaya</a> </label>
         <ul>
-            <li><a href="#">Login</a></li>
+            @guest
+            <li><a href="{{ route('login') }}">Login</a></li>
+            <li><a href="{{ route('register') }}">Register</a></li>
+            @else
+            <li><a href="{{url('/home')}}">{{Auth::user()->name}}</a></li>
+            <li><a href="{{ route('logout') }}">Logout</a></li>
+            @endguest
         </ul>
     </nav>
 
         @yield('content')
 
+        <script src="{{asset('js/js.js')}}"></script>
     </body>
 
 </html>

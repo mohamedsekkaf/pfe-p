@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Chikaya;
 use DB;
+use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -59,4 +60,12 @@ class Controller extends BaseController
     function succes(){
         return view('succes');
     }
+    function home(){
+        $chikaya = Chikaya::all();
+        return view('home',compact('chikaya'));
+    }
+    public function logout(Request $request) {
+        Auth::logout();
+        return redirect('/');
+      }
 }

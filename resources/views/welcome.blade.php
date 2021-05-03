@@ -20,7 +20,7 @@
                             <table>
                                 <tr>
                                     <td class="td1">Nom</td>
-                                    <td class="td2"><input placeholder="Nom" name="nom" id="input" type="text" class="form-control"></td>
+                                    <td class="td2"><input placeholder="Nom" name="nom" id="input1" type="text" class="form-control" required></td>
                                 </tr>
                             </table>
                             <br>
@@ -28,7 +28,7 @@
                             <table>
                                 <tr>
                                     <td class="td1">Prénom</td>
-                                    <td class="td2"><input placeholder="Prénom" name="prenom" id="input" type="text" class="form-control"></td>
+                                    <td class="td2"><input placeholder="Prénom" name="prenom" id="input2" type="text" class="form-control" required><label id="lab2" style="color:red;"></label></td>
                                 </tr>
                             </table>
                             <br>
@@ -36,7 +36,7 @@
                             <table>
                                 <tr>
                                     <td class="td1">CIN</td>
-                                    <td class="td2"><input placeholder="CIN" name="cin" id="input" type="text" class="form-control"></td>
+                                    <td class="td2"><input placeholder="CIN" name="cin" id="input3" type="text" class="form-control" required><label id="lab3" style="color:red;"></label></td>
                                 </tr>
                             </table>
                             <br>
@@ -44,7 +44,7 @@
                             <table>
                                 <tr>
                                     <td class="td1">Telephone</td>
-                                    <td class="td2"><input placeholder="Telephone" name="telephone" id="input" type="text" class="form-control"></td>
+                                    <td class="td2"><input placeholder="Telephone" name="telephone" id="input4" type="text" class="form-control" required> <label id="lab4" style="color:red;"></label></td>
                                 </tr>
                             </table>
                             <br>
@@ -52,7 +52,7 @@
                             <table>
                                 <tr>
                                     <td class="td1">Email</td>
-                                    <td class="td2"><input placeholder="Email" name="email" id="input" type="text" class="form-control"></td>
+                                    <td class="td2"><input placeholder="Email" name="email" id="input5" type="email" class="form-control" required><label id="lab5" style="color:red;"></label></td>
                                 </tr>
                             </table>
                             <br>
@@ -60,7 +60,7 @@
                             <table>
                                 <tr>
                                     <td class="td1">Addresse</td>
-                                    <td class="td2"><input placeholder="Addresse" name="addresse" id="input" type="text" class="form-control"></td>
+                                    <td class="td2"><input placeholder="Addresse" name="addresse" id="input6" type="text" class="form-control" required><label id="lab6" style="color:red;"></label></td>
                                 </tr>
                             </table>
                         </div>
@@ -74,9 +74,9 @@
                             <table>
                                 <tr>
                                     <td class="td1">Région</td>
-                                    <td class="td2"><select  name="region" id="input" class="form-control" name="" id="">
+                                    <td class="td2"><select  name="region" id="input7" class="form-control" name="" id="" required>
                                         <option>Casablanca-Settat</option>
-                                    </select></td>
+                                    </select> <label id="lab7" style="color:red;"></label></td>
                                 </tr>
                             </table>
                             <br>
@@ -84,9 +84,9 @@
                             <table>
                                 <tr>
                                     <td class="td1">Province</td>
-                                    <td class="td2"><select name="province" id="input" class="form-control" name="" id="">
+                                    <td class="td2"><select name="province" id="input8" class="form-control" name="" id="" required>
                                         <option>El jadida</option>
-                                    </select></td>
+                                    </select> <label id="lab8" style="color:red;"></label></td>
                                 </tr>
                             </table>
                             <br>
@@ -95,11 +95,11 @@
                                 <tr>
                                     <td class="td1">Nom du département</td>
                                     <td class="td2">
-                                        <select name="nom_departement" id="input" class="form-control" name="" id="">
+                                        <select name="nom_departement" id="input9" class="form-control" name="" id="" required>
                                             <option>option1</option>
                                             <option>option2</option>
                                             <option>option3</option>
-                                        </select>
+                                        </select><label id="lab9" style="color:red;"></label>
                                     </td>
                                 </tr>
                             </table>
@@ -114,14 +114,14 @@
                             <table>
                                 <tr>
                                     <td class="td1">Réclamation </td>
-                                    <td class="td2"><textarea name="reclamation" id="input" class="form-control" name="" id="" placeholder="Réclamation" cols="10" rows="3"></textarea></td>
+                                    <td class="td2"><textarea name="reclamation" id="input10" class="form-control" name="" id="" placeholder="Réclamation" cols="10" rows="3" required></textarea><label id="lab10" style="color:red;"></label></td>
                                 </tr>
                             </table>
                             <br><label class="labphone">Texte de la Réclamation</label>
                             <table>
                                 <tr>
                                     <td class="td1">Texte de la Réclamation</td>
-                                    <td><textarea placeholder="Texte de la Réclamation" name="texte_reclamation" id="input" class="form-control" name="" id="" cols="10" rows="7"></textarea></td>
+                                    <td><textarea placeholder="Texte de la Réclamation" name="texte_reclamation" id="input11" class="form-control" name="" id="" cols="10" rows="7" required></textarea><label id="lab11" style="color:red;"></label></td>
                                 </tr>
                             </table>
                         </div>
@@ -138,15 +138,16 @@
                                 <li> <img src="{{asset('image/check.png')}}" alt="" width="20">wbwerfv</li>
                             </ul>
                             <br>
-                            <input type="checkbox" name="check" id="check"><i for="check">Accepté</i>
+                            <input type="checkbox" name="check" id="check" required><i for="check">Accepté</i>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <input type="submit"  value="Enregistrer">
+                    <input type="submit" id="submit"  value="Enregistrer">
                     <br><br>
                 </div>
             </form>
+            <!-- <button onclick="verifier()">Verifier</button> -->
         </div>
         <br><br><br><br>
     </div>
