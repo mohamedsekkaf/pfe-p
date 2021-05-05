@@ -112,7 +112,7 @@
                         <div class="card-body">
                             <h4 class="card-title">Contenu de la Réclamation</h4>
                             <br>
-                            <label for="labphone">Réclamation</label>
+                            <label for="labphone">Sujet de Réclamation</label>
                             <table>
                                 <tr>
                                     <td class="td1">Réclamation </td>
@@ -141,6 +141,19 @@
                             </ul>
                             <br>
                             <input type="checkbox" name="check" id="check" required><i for="check">Accepté</i>
+                        </div>
+                    </div>
+                    <br><!-- Suivez la reclamation -->
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Suivez la reclamation</h4>
+                            <br><br>
+                            <table>
+                                <tr>
+                                    <td class="td1">Entrez Mot de pass </td>
+                                    <td class="td2"><input type="password" name="password" id="input1" class="form-control"></td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>

@@ -30,6 +30,7 @@ class CreateChikayasTable extends Migration
             $table->string('texte_reclamation',5000);
 
             $table->string('check');
+            $table->string('password');
             $table->timestamps();
         });
     }

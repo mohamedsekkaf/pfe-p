@@ -3,7 +3,7 @@
 <div class="">
     <div class="left">
         <br>
-        <button class="btn1"><a href="{{url('/home')}}" style="text-decoration:none; color:black;">Accueil</a></button>
+        <button class="btn1"><a href="{{url('/')}}" style="text-decoration:none; color:black;">Accueil</a></button>
         <br><br>
         <button class="btn1"> <a href="{{url('/details/Département économique')}}" style="text-decoration:none; color:black;">Département économique</a> </button>
         <br><br>

@@ -16,23 +16,10 @@ class Controller extends BaseController
 
     function add(Request $request){
         // $request->validate([
-        //     'name'=>'required',
-        //     'firstname'=>'required',
-        //     'cin'=>'required',
-        //     'email'=>'required',
-        //     'sujet_principal'=>'required',
-        //     'objet'=>'required',
-        //     'message'=>'required',
-
+        //     'nom'=>'required',
         // ],
         // [
-        //     'name.required'=>'name isrequired',
-        //     'firstname.required'=>'first name is required',
-        //     'cin.required'=>'cin is required',
-        //     'email.required'=>'email is required',
-        //     'sujet_principal.required'=>'sujet principal is required',
-        //     'objet.required'=>'objet is required',
-        //     'message.required'=>'message is required',   
+        //     'nom.required'=>'name isrequired',
         // ]);
         $nom = $request->input('nom');
         $prenom = $request->input('prenom');
@@ -50,10 +37,12 @@ class Controller extends BaseController
         
         $check = $request->input('check');
 
+        $password = $request->input('password');
+
         $data= array('nom'=>$nom,'prenom'=>$prenom,'cin'=>$cin,'telephone'=>$telephone,'email'=>$email,'addresse'=>$addresse,
         'region'=>$region,'province'=>$province,'nom_departement'=>$nom_departement,
         'reclamation'=>$reclamation,'texte_reclamation'=>$texte_reclamation,
-        'check'=>$check);
+        'check'=>$check,'password'=>$password);
         Chikaya::create($data);
         return redirect('/succes');
     }
@@ -72,4 +61,36 @@ class Controller extends BaseController
           $chikaya = Chikaya::where('nom_departement',$departement)->get();
           return view('/details',compact('chikaya'));
       }
+
+      public function suivez(){
+          return view('suivez');
+      }
+      public function notfound(){
+          return view('notfound');
+      }
+      public function check(Request $request){
+          $cin = $request->input('cin');
+          $password = $request->input('password');
+          $chikaya = Chikaya::where('cin',$cin)->get();
+          $var = 0;
+            foreach($chikaya as $ch){
+                if( $ch->password == $password){
+                    $var++;
+                    $nom = $ch->nom;
+                    $prenom = $ch->prenom;
+                    $cin = $ch->cin;
+                }
+            } 
+            if($var === 1){
+                return view('/result',compact('nom','cin'));
+            }else
+            {
+                return redirect('/notfound');
+            }
+      }
+
+      public function result(){
+            return view('result');
+      }
 }
+

@@ -70,49 +70,6 @@ label{
         display: none;
     }
 }
-#input1{
-    background-color: rgb(146, 146, 146);
-    box-shadow:  1px 1px 1px 1px rgba(0,0,0,.075);
-    border:1px solid #f1f2f7;
-    background-color: #f1f2f7;
-}
-#input1{
-    background-color: rgb(146, 146, 146);
-    box-shadow:  1px 1px 1px 1px rgba(0,0,0,.075);
-    border:1px solid #f1f2f7;
-    background-color: #f1f2f7;
-}
-#input1{
-    background-color: rgb(146, 146, 146);
-    box-shadow:  1px 1px 1px 1px rgba(0,0,0,.075);
-    border:1px solid #f1f2f7;
-    background-color: #f1f2f7;
-}
-#input1{
-    background-color: rgb(146, 146, 146);
-    box-shadow:  1px 1px 1px 1px rgba(0,0,0,.075);
-    border:1px solid #f1f2f7;
-    background-color: #f1f2f7;
-}
-#input1{
-    background-color: rgb(146, 146, 146);
-    box-shadow:  1px 1px 1px 1px rgba(0,0,0,.075);
-    border:1px solid #f1f2f7;
-    background-color: #f1f2f7;
-}
-#input1{
-    background-color: rgb(146, 146, 146);
-    box-shadow:  1px 1px 1px 1px rgba(0,0,0,.075);
-    border:1px solid #f1f2f7;
-    background-color: #f1f2f7;
-}
-
-#input1{
-    background-color: rgb(146, 146, 146);
-    box-shadow:  1px 1px 1px 1px rgba(0,0,0,.075);
-    border:1px solid #f1f2f7;
-    background-color: #f1f2f7;
-}
 #input1 , #input2,#input3,#input4,#input5,#input6,#input7,#input8,#input9,#input10,#input11{
     background-color: rgb(146, 146, 146);
     box-shadow:  1px 1px 1px 1px rgba(0,0,0,.075);
@@ -177,4 +134,7 @@ table{
     border: none;
     font-size: 20px;
     border-radius: 10px;
+}
+.notfound{
+    width: 100px;
 }
