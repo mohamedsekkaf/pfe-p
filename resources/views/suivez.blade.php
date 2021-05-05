@@ -14,7 +14,7 @@
                 <table>
                     <tr>
                         <td class="td1">VOTRE CIN </td>
-                        <td class="td2"><input type="text" name="cin" placeholder="VOTRE CIN" class="form-control" id="input1"></td>
+                        <td class="td2"><input type="text" name="cin" placeholder="VOTRE CIN" class="form-control" id="input1" required></td>
                     </tr>
                 </table>
                 <br>
@@ -22,7 +22,7 @@
                 <table>
                     <tr>
                         <td class="td1">VOTRE MOT DE PASS </td>
-                        <td class="td2"><input type="text" name="password" placeholder="MOT DE PASS" class="form-control" id="input1"></td>
+                        <td class="td2"><input type="text" name="password" placeholder="MOT DE PASS" class="form-control" id="input1" required></td>
                     </tr>
                 </table>
                 <br><br>
