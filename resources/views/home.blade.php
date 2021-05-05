@@ -13,7 +13,7 @@
         <br><br>
         <button class="btn1"> <a href="{{url('/details/Département des sports')}}" style="text-decoration:none; color:black;">Département des sports</a></button>
         <br><br>
-        <button class="btn1"> <a href="{{url('/Département de la police administrative')}}" style="text-decoration:none; color:black;">Département de la police administrative</a></button>
+        <button class="btn1"> <a href="{{url('details/Département de la police administrative')}}" style="text-decoration:none; color:black;">Département de la police administrative</a></button>
     </div>
     <div class="main">
         <h1 class="title">Les Réclamation</h1>
