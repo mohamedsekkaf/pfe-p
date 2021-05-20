@@ -11,7 +11,7 @@ class Chikaya extends Model
         'id','nom','prenom','cin','telephone','email','addresse',
         'region','province','nom_departement',
         'reclamation','texte_reclamation',
-        'check','password'
+        'check','password','date'
     ];
 
 

@@ -45,7 +45,7 @@ class Controller extends BaseController
         $data= array('nom'=>$nom,'prenom'=>$prenom,'cin'=>$cin,'telephone'=>$telephone,'email'=>$email,'addresse'=>$addresse,
         'region'=>$region,'province'=>$province,'nom_departement'=>$nom_departement,
         'reclamation'=>$reclamation,'texte_reclamation'=>$texte_reclamation,
-        'check'=>$check,'password'=>$password);
+        'check'=>$check,'password'=>$password ,'date'=>date('Y-m-d H:i:s'));
         Chikaya::create($data);
         $var1 = Chikaya::all();
         $id = 0; 
@@ -138,14 +138,37 @@ class Controller extends BaseController
 
     public function statistique()
     {
-        $year = ['2020','2021','2022','2023','2024','2025'];
 
-        $user = [];
+        
+
+        $year = ['2020','2021','2022','2023','2024','2025','2026'];
+        $chikaya = [];
+        $d1 = 'Département économique';
+        $d2 = 'Département de l environnement';
+        $d3 = 'département de santé';
+        $d4 = 'Département des sports';
+        $d5 = 'Département de la police administrative';
+
         foreach ($year as $key => $value) {
-            $chikaya[] = Chikaya::where(\DB::raw("DATE_FORMAT(created_at, '%Y')"),$value)->count();
-        }
+            $chikaya[] = Chikaya::where(\DB::raw("DATE_FORMAT(date, '%Y')"),$value)->count();
+            $dd1[] = Chikaya::where(DB::raw("DATE_FORMAT(date, '%Y')"),$value)->where('nom_departement',$d1)->count();
+            $dd2[] = Chikaya::where(DB::raw("DATE_FORMAT(date, '%Y')"),$value)->where('nom_departement',$d2)->count();
+            $dd3[] = Chikaya::where(DB::raw("DATE_FORMAT(date, '%Y')"),$value)->where('nom_departement',$d3)->count();
+            $dd4[] = Chikaya::where(DB::raw("DATE_FORMAT(date, '%Y')"),$value)->where('nom_departement',$d4)->count();
+            $dd5[] = Chikaya::where(DB::raw("DATE_FORMAT(date, '%Y')"),$value)->where('nom_departement',$d5)->count();
 
-    	return view('statistique')->with('year',json_encode($year,JSON_NUMERIC_CHECK))->with('chikaya',json_encode($chikaya,JSON_NUMERIC_CHECK));
+
+        }
+    	return view('statistique')->with('year',json_encode($year,JSON_NUMERIC_CHECK))
+                                  ->with('chikaya',json_encode($chikaya,JSON_NUMERIC_CHECK))
+                                  ->with('dd1',json_encode($dd1,JSON_NUMERIC_CHECK))
+                                  ->with('dd2',json_encode($dd2,JSON_NUMERIC_CHECK))
+                                  ->with('dd3',json_encode($dd3,JSON_NUMERIC_CHECK))
+                                  ->with('dd4',json_encode($dd4,JSON_NUMERIC_CHECK))
+                                  ->with('dd5',json_encode($dd5,JSON_NUMERIC_CHECK));
+                                  
     }
+
+
     
 }

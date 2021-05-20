@@ -32,6 +32,7 @@ class CreateChikayasTable extends Migration
             $table->string('check');
             $table->string('password');
             $table->timestamps();
+            $table->date('date');
         });
     }
 
