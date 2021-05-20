@@ -19,8 +19,9 @@
                             <label class="labphone">Nom</label>
                             <table>
                                 <tr>
-                                    <td class="td1">Nom</td>
-                                    <td class="td2"><input placeholder="Nom" name="nom" id="input1" type="text" class="form-control" required></td>
+                                    <td class="td1 ">Nom</td>
+                                    <td class="td2"><input placeholder="Nom" name="nom" value="{{old('nom')}}"
+                                            id="input1" type="text" class="form-control" required></td>
                                 </tr>
                             </table>
                             <br>
@@ -28,7 +29,10 @@
                             <table>
                                 <tr>
                                     <td class="td1">Prénom</td>
-                                    <td class="td2"><input placeholder="Prénom" name="prenom" id="input2" type="text" class="form-control" required><label id="lab2" style="color:red;"></label></td>
+                                    <td class="td2"><input placeholder="Prénom" name="prenom" id="input2"
+                                            value="{{old('prenom')}}" type="text" class="form-control" required><label
+                                            id="lab2" style="color:red;"></label>
+                                    </td>
                                 </tr>
                             </table>
                             <br>
@@ -36,7 +40,10 @@
                             <table>
                                 <tr>
                                     <td class="td1">CIN</td>
-                                    <td class="td2"><input placeholder="CIN" name="cin" id="input3" type="text" class="form-control" required><label id="lab3" style="color:red;"></label></td>
+                                    <td class="td2"><input placeholder="CIN" name="cin" id="input3"
+                                            value="{{old('cin')}}" type="text" class="form-control" required><label
+                                            id="lab3" style="color:red;"></label>
+                                    </td>
                                 </tr>
                             </table>
                             <br>
@@ -44,7 +51,9 @@
                             <table>
                                 <tr>
                                     <td class="td1">Telephone</td>
-                                    <td class="td2"><input placeholder="Telephone" name="telephone" id="input4" type="number" class="form-control" required> <label id="lab4" style="color:red;"></label></td>
+                                    <td class="td2"><input placeholder="Telephone" value="{{old('telephone')}}"
+                                            name="telephone" id="input4" type="number" class="form-control" required>
+                                        <label id="lab4" style="color:red;"></label></td>
                                 </tr>
                             </table>
                             <br>
@@ -52,7 +61,10 @@
                             <table>
                                 <tr>
                                     <td class="td1">Email</td>
-                                    <td class="td2"><input placeholder="Email" name="email" id="input5" type="email" class="form-control" required><label id="lab5" style="color:red;"></label></td>
+                                    <td class="td2"><input placeholder="Email" name="email" value="{{old('email')}}"
+                                            id="input5" type="email" class="form-control" required><label id="lab5"
+                                            style="color:red;"></label>
+                                    </td>
                                 </tr>
                             </table>
                             <br>
@@ -60,7 +72,9 @@
                             <table>
                                 <tr>
                                     <td class="td1">Addresse</td>
-                                    <td class="td2"><input placeholder="Addresse" name="addresse" id="input6" type="text" class="form-control" required><label id="lab6" style="color:red;"></label></td>
+                                    <td class="td2"><input placeholder="Addresse" value="{{old('addresse')}}"
+                                            name="addresse" id="input6" type="text" class="form-control" required><label
+                                            id="lab6" style="color:red;"></label></td>
                                 </tr>
                             </table>
                         </div>
@@ -74,9 +88,10 @@
                             <table>
                                 <tr>
                                     <td class="td1">Région</td>
-                                    <td class="td2"><select  name="region" id="input7" class="form-control" name="" id="" required>
-                                        <option>Casablanca-Settat</option>
-                                    </select> <label id="lab7" style="color:red;"></label></td>
+                                    <td class="td2"><select name="region" id="input7" class="form-control" name="" id=""
+                                            required>
+                                            <option>Casablanca-Settat</option>
+                                        </select> <label id="lab7" style="color:red;"></label></td>
                                 </tr>
                             </table>
                             <br>
@@ -84,9 +99,10 @@
                             <table>
                                 <tr>
                                     <td class="td1">Province</td>
-                                    <td class="td2"><select name="province" id="input8" class="form-control" name="" id="" required>
-                                        <option>El jadida</option>
-                                    </select> <label id="lab8" style="color:red;"></label></td>
+                                    <td class="td2"><select name="province" id="input8" class="form-control" name=""
+                                            id="" required>
+                                            <option>El jadida</option>
+                                        </select> <label id="lab8" style="color:red;"></label></td>
                                 </tr>
                             </table>
                             <br>
@@ -95,7 +111,8 @@
                                 <tr>
                                     <td class="td1">Nom du département</td>
                                     <td class="td2">
-                                        <select name="nom_departement" id="input9" class="form-control" name="" id="" required>
+                                        <select name="nom_departement" value="{{old('nom_departement')}}" id="input9"
+                                            class="form-control" name="" id="" required>
                                             <option>Département économique</option>
                                             <option>Département de l environnement</option>
                                             <option>département de santé</option>
@@ -116,14 +133,20 @@
                             <table>
                                 <tr>
                                     <td class="td1">Réclamation </td>
-                                    <td class="td2"><textarea name="reclamation" id="input10" class="form-control" name="" id="" placeholder="Réclamation" cols="10" rows="3" required></textarea><label id="lab10" style="color:red;"></label></td>
+                                    <td class="td2"><textarea value="" name="reclamation" id="input10"
+                                            class="form-control" name="" id="" placeholder="Réclamation" cols="10"
+                                            rows="3" required>{{old('reclamation')}}</textarea><label id="lab10"
+                                            style="color:red;"></label></td>
                                 </tr>
                             </table>
                             <br><label class="labphone">Texte de la Réclamation</label>
                             <table>
                                 <tr>
                                     <td class="td1">Texte de la Réclamation</td>
-                                    <td><textarea placeholder="Texte de la Réclamation" name="texte_reclamation" id="input11" class="form-control" name="" id="" cols="10" rows="7" required></textarea><label id="lab11" style="color:red;"></label></td>
+                                    <td><textarea placeholder="Texte de la Réclamation" name="texte_reclamation"
+                                            id="input11" class="form-control" name="" id="" cols="10" rows="7"
+                                            required>{{ old('texte_reclamation') }}</textarea><label id="lab11"
+                                            style="color:red;"></label></td>
                                 </tr>
                             </table>
                         </div>
@@ -138,9 +161,10 @@
                                 <li><img src="{{asset('image/check.png')}}" alt="" width="20"> ewv</li>
                                 <li> <img src="{{asset('image/check.png')}}" alt="" width="20">ewvgwef</li>
                                 <li> <img src="{{asset('image/check.png')}}" alt="" width="20">wbwerfv</li>
-                            </ul>
-                            <br>
-                            <input type="checkbox" name="check" id="check" required><i for="check">Accepté</i>
+                                </ul>
+                                <br>
+                                <input type="checkbox" name="check" id="check" required><i
+                                    for="check">Accepté</i>
                         </div>
                     </div>
                     <br><!-- Suivez la reclamation -->
@@ -148,17 +172,32 @@
                         <div class="card-body">
                             <h4 class="card-title">Suivez la reclamation</h4>
                             <br><br>
+                            <label class="labphone">Entrez Mot de Pass</label>
                             <table>
                                 <tr>
                                     <td class="td1">Entrez Mot de pass </td>
-                                    <td class="td2"><input type="password" name="password" id="input1" class="form-control"></td>
+                                    <td class="td2"><input type="password" name="password" id="input1"
+                                            class="form-control"></td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td style="width:100%;">
+                                        @if ($errors->any())
+                                        <div class="alert alert-danger">
+                                            @foreach ($errors->all() as $error)
+                                            {{ $error }}
+                                            @endforeach
+                                        </div>
+                                        @endif
+                                    </td>
                                 </tr>
                             </table>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <input type="submit" id="submit"  value="Enregistrer">
+                    <input type="submit" id="submit" value="Enregistrer">
                     <br><br>
                 </div>
             </form>

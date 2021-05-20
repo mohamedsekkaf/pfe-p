@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -10,7 +11,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes(['register'=>false]);
+Auth::routes(['register'=>true]);
 
 
 Route::get('/', function () {
@@ -23,7 +24,14 @@ Route::get('/notfound','Controller@notfound');
 Route::post('/check','Controller@check');
 Route::get('/result','Controller@result');
 Route::group(['middleware' => ['auth']], function(){
-// Route::get('/home','Controller@home');
-// Route::get('logout', 'Controller@logout');
-// Route::get('/details/{departement}','Controller@show');
+Route::get('/home','Controller@home');
+Route::get('logout', 'Controller@logout');
+Route::get('/details/{departement}','Controller@show');
+Route::get('/showdetails/{id}','Controller@showdetails');
+Route::post('/traitementetat','Controller@traitementetat');
+Route::post('/traitementreponse','Controller@traitementreponse');
+Route::get('/statistique','Controller@statistique');
+
+
+Route::get('statistique', [Controller::class, 'statistique'])->name('chartjs.index');
 });

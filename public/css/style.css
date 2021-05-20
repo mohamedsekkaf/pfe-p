@@ -135,6 +135,38 @@ table{
     font-size: 20px;
     border-radius: 10px;
 }
+#submit1{
+    padding: 10px 40px;
+    background-image: linear-gradient(to left top, #009eff, #00b2ff, #00c5ff, #00d7ff, #1ae7ff);
+    border: none;
+    font-size: 20px;
+    border-radius: 10px;
+}
 .notfound{
     width: 100px;
+}
+.lab{
+    border-radius: 10px;
+    background-color: rgb(146, 146, 146);
+    box-shadow:  1px 1px 1px 1px rgba(0,0,0,.075);
+    border:1px solid #f1f2f7;
+    background-color: #f1f2f7;
+    width: 80%;
+}
+.tdstyle{
+    color: green;
+    font-size: 25px;
+}
+.tdstyle1{
+    color: green;
+    font-size: 17px;
+}
+.table1 {
+    display: none;
+}
+.btn2{
+    display: none;
+}
+.labsubmit{
+    cursor: pointer;
 }

@@ -3,17 +3,17 @@
 <div class="">
     <div class="left">
         <br>
-        <button class="btn1"><a href="{{url('/')}}" style="text-decoration:none; color:black;">Accueil</a></button>
+        <button class="btn1"><a href="{{url('/home')}}" style="text-decoration:none; color:black;">Accueil</a></button>
         <br><br>
         <button class="btn1"> <a href="{{url('/details/Département économique')}}" style="text-decoration:none; color:black;">Département économique</a> </button>
         <br><br>
-        <button class="btn1"><a href="{{url('/details/Département de l environnement')}}" style="text-decoration:none; color:black;">Département de l'environnement</button>
+        <button class="btn1"><a href="{{url('/details/Département de l environnement')}}" style="text-decoration:none; color:black;">Département de l'environnement</a></button>
         <br><br>
-        <button class="btn1"><a href="{{url('/details/département de santé')}}" style="text-decoration:none; color:black;">département de santé</button>
+        <button class="btn1"><a href="{{url('/details/département de santé')}}" style="text-decoration:none; color:black;">département de santé</a></button>
         <br><br>
-        <button class="btn1"><a href="{{url('/details/Département des sports')}}" style="text-decoration:none; color:black;">Département des sports</button>
+        <button class="btn1"><a href="{{url('/details/Département des sports')}}" style="text-decoration:none; color:black;">Département des sports</a></button>
         <br><br>
-        <button class="btn1"><a href="{{url('/details/Département de la police administrative')}}" style="text-decoration:none; color:black;">Département de la police administrative</button>
+        <button class="btn1"><a href="{{url('/details/Département de la police administrative')}}" style="text-decoration:none; color:black;">Département de la police administrative</a></button>
     </div>
     <div class="main">
     <h1 class="title">Les Réclamation</h1>
@@ -42,7 +42,7 @@
                         </td>
                     </tr>
                 </table>
-                <button>Voir</button>
+                <a href="{{url('/showdetails')}}/{{$ch->id}}"><input type="button" value="voir"></a>
             </div>
         </div>
         @endforeach

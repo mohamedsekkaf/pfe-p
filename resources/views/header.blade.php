@@ -14,7 +14,15 @@
     <nav>
         <label translate="no"><a href="{{url('/')}}" class="logo">Chikaya</a> </label>
         <ul>
-            <li><a href="{{url('/suivez')}}">Suivez La Réclamation</a></li>
+            @guest 
+             <li><a href="{{url('/suivez')}}">Suivez La Réclamation</a></li>
+            <li><a href="{{route('login')}}">Login</a></li>
+            <li><a href="{{route('register')}}">Register</a></li>
+            @else
+            <li><a href="{{url('/statistique')}}">Statistique</a></li>
+            <li><a href="#">{{auth::user()->name}}</a></li>
+            <li><a href="{{route('logout')}}">Logout</a></li>
+            @endguest
         </ul>
     </nav>
         @yield('content')

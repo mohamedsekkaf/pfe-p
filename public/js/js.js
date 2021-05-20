@@ -74,3 +74,10 @@
 //     }
     
 // }
+
+function editer(){
+    document.getElementById('table1').style.display = 'block';
+    document.getElementById('submit').style.display = 'none';
+    document.getElementById('submit1').style.display = 'block';
+
+}

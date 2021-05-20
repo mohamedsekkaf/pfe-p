@@ -42,7 +42,7 @@
                         </td>
                     </tr>
                 </table>
-                <button>Voir</button>
+                <a href="{{url('/showdetails')}}/{{$ch->id}}"><input type="button" value="voir"></a>
             </div>
         </div>
         @endforeach
