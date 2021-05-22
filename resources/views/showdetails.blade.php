@@ -167,7 +167,7 @@
             <br><br>
             <div class="card">
                 <div>
-                    <h3><strong style="color:red;"> E</strong></h3>
+                    <h3><strong style="color:red;">État Actuel</strong></h3>
                 </div>
                 <div class="card-body">
                     <table>
@@ -186,7 +186,7 @@
             <br><br>
             <div class="card">
                 <div>
-                    <h3><strong style="color:red;"> R</strong></h3>
+                    <h3><strong style="color:red;"> Les Réponses Déjà Envoyé</strong></h3>
                 </div>
                 <div class="card-body">
                     @foreach($reponse as $r)

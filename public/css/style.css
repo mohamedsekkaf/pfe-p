@@ -62,14 +62,52 @@ label{
 .labphone{
     display: none;
 }
+.iconmenu{
+    float: right;
+    color: rgb(255, 255, 255);
+    line-height: 80px;
+    cursor: pointer;
+    margin-right: 30px;
+    font-size: 35px;
+    display: none;
+}
 @media (max-width:770px) {
+    .ul{
+        display: none;
+        position: fixed;
+        top: 80px;
+        width: 100%;
+        text-align: center;
+        background-image: linear-gradient(to top, #0000e6, #004fde, #005cae, #005f78, #575a5a);
+        height: 90vh;
+        border-radius: 6px;
+    }
+    
+    .iconmenu{
+        display: block;
+    }
     .labphone{
         display: block;
     }
     .td1{
         display: none;
     }
+    ul li {
+        display: block;
+    }
+    #check:checked ~ .ul:first-of-type {
+        display: block;
+    }
+
+
 }
+
+#check{
+    display: none;
+}
+
+
+
 #input1 , #input2,#input3,#input4,#input5,#input6,#input7,#input8,#input9,#input10,#input11{
     background-color: rgb(146, 146, 146);
     box-shadow:  1px 1px 1px 1px rgba(0,0,0,.075);
