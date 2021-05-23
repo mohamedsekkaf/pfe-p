@@ -31,7 +31,7 @@ Route::get('/showdetails/{id}','Controller@showdetails');
 Route::post('/traitementetat','Controller@traitementetat');
 Route::post('/traitementreponse','Controller@traitementreponse');
 Route::get('/statistique','Controller@statistique');
-
+Route::post('/delete','Controller@delete');
 
 Route::get('statistique', [Controller::class, 'statistique'])->name('chartjs.index');
 });

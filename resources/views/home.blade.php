@@ -1,7 +1,7 @@
 @extends('header')
 @section('content')
 <div class="">
-    <div>
+    <div class="menu">
         <div class="dropdown show">
             <a class="btn fas fa-bars " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
@@ -10,7 +10,8 @@
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="btn3" href="{{url('/home')}}" style="text-decoration:none; color:black;">Accueil</a><br><br>
-                <a class="btn3" href="{{url('/details/Département économique')}}" style="text-decoration:none; color:black;">
+                <a class="btn3" href="{{url('/details/Département économique')}}"
+                    style="text-decoration:none; color:black;">
                     Département économique</a><br><br>
                 <a class="btn3" href="{{url('/details/Département de l environnement')}}"
                     style="text-decoration:none; color:black;">Département de l'environnement</a><br><br>
@@ -44,9 +45,10 @@
     </div>
     <div class="main">
         <h1 class="title">Les Réclamation</h1>
+        <!-- mode desktop -->
         @foreach($chikaya as $ch)
-        <br>
-        <div class="card">
+
+        <div class="card carddesktop">
             <div class="card-body">
                 <h4 class="card-title"><i style="color:red">Sujet</i> : {{$ch->reclamation}}</h4>
                 <table>
@@ -69,7 +71,50 @@
                         </td>
                     </tr>
                 </table>
-                <a href="{{url('/showdetails')}}/{{$ch->id}}"><input type="button" value="voir"></a>
+                <a href="{{url('/showdetails')}}/{{$ch->id}}"><input class="btn1" type="button" value="voir"></a>
+            </div>
+        </div>
+        @endforeach
+        <!-- mode telephonique -->
+        @foreach($chikaya as $ch)
+        <br>
+        <div class="card cardphone">
+            <div class="card-body">
+                <div>
+                    <img class="chikaya1" src="{{asset('image/chikaya.png')}}" alt="chikaya">
+                </div>
+                <h4 class="card-title"><i style="color:red">Sujet :</i> {{$ch->reclamation}}</h4>
+                <table>
+                    <tr>
+                        <td style="text-align:left; width:40%;margin-left:10px"><i style="color:green;">Nom et Prénom :</i></td>
+                        <td style="text-align:left; width:60%">{{$ch->nom}} {{$ch->prenom}}</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td style="text-align:left; width:40%"><i style="color:green;">CIN :</i></td>
+                        <td style="text-align:left;width:60%">{{$ch->cin}}</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td style="text-align:left;width:40%"><i style="color:green;">Province : </i></td>
+                        <td style="text-align:left;width:60%"> {{$ch->province}}</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td style="text-align:left;width:40%"> <i style="color:green;">Département : </i></td>
+                        <td style="text-align:left;width:60%">{{$ch->nom_departement}}</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td style="text-align:left;width:40%"><i style="color:green;">Date : </i></td>
+                        <td style="text-align:left;width:60%">{{$ch->created_at}}</td>
+                    </tr>
+                </table>
+                <a href="{{url('/showdetails')}}/{{$ch->id}}"><input class="btn1" type="button" value="voir"></a>
             </div>
         </div>
         @endforeach

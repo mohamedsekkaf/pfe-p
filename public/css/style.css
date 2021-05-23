@@ -90,7 +90,11 @@ label{
     float: right;
     width:80%;
 }
-@media (max-width:770px) {
+.menu{
+    display: none;
+}
+
+@media (max-width:850px) {
     .ul{
         display: none;
         position: fixed;
@@ -129,8 +133,22 @@ label{
     #check1:checked ~ .ul{
         display: block;
     }
+    .menu{
+        display: block;
+    }
 
 
+}
+.cardphone{
+    display: none;
+}
+@media (max-width:600px) {
+    .cardphone{
+        display: block;
+    }
+    .carddesktop{
+        display: none;
+    }
 }
 #check{
     display: none;

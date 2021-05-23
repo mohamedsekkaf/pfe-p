@@ -13,6 +13,7 @@
             <div class="card">
                 <div class="card-body">
                     <br>
+                    <label class="labphone" style="color:green;">Nom</label>
                     <table>
                         <tr>
                             <td class="td1 tdstyle">Nom</td>
@@ -20,6 +21,7 @@
                         </tr>
                     </table>
                     <br><!--  -->
+                    <label class="labphone" style="color:green;">Prénom</label>
                     <table>
                         <tr>
                             <td class="td1 tdstyle">Prénom</td>
@@ -27,6 +29,7 @@
                         </tr>
                     </table>
                     <br><!--  -->
+                    <label class="labphone" style="color:green;">CIN</label>
                     <table>
                         <tr>
                             <td class="td1 tdstyle">CIN</td>
@@ -34,6 +37,7 @@
                         </tr>
                     </table>
                     <br><!--  -->
+                    <label class="labphone" style="color:green;">Telephone</label>
                     <table>
                         <tr>
                             <td class="td1 tdstyle">Telephone</td>
@@ -41,6 +45,7 @@
                         </tr>
                     </table>
                     <br><!--  -->
+                    <label class="labphone" style="color:green;">Email</label>
                     <table>
                         <tr>
                             <td class="td1 tdstyle">Email</td>
@@ -48,6 +53,7 @@
                         </tr>
                     </table>
                     <br><!--  -->
+                    <label class="labphone" style="color:green;">Addresse</label>
                     <table>
                         <tr>
                             <td class="td1 tdstyle">Addresse</td>
@@ -61,6 +67,7 @@
             <div class="card">
                 <div class="card-body">
                     <br><!--  -->
+                    <label class="labphone" style="color:green;">Region</label>
                     <table>
                         <tr>
                             <td class="td1 tdstyle">Region</td>
@@ -68,6 +75,7 @@
                         </tr>
                     </table>
                     <br><!--  -->
+                    <label class="labphone" style="color:green;">Province</label>
                     <table>
                         <tr>
                             <td class="td1 tdstyle">Province</td>
@@ -75,6 +83,7 @@
                         </tr>
                     </table>
                     <br><!--  -->
+                    <label class="labphone" style="color:green;">Departement</label>
                     <table>
                         <tr>
                             <td class="td1 tdstyle">Departement</td>
@@ -87,6 +96,7 @@
             <div class="card">
                 <div class="card-body">
                     <br><!--  -->
+                    <label class="labphone" style="color:green;">Sujet De Réclamation</label>
                     <table>
                         <tr>
                             <td class="td1 tdstyle">Sujet De Réclamation</td>
@@ -94,6 +104,7 @@
                         </tr>
                     </table>
                     <br><!--  -->
+                    <label class="labphone" style="color:green;">Texte De Réclamation</label>
                     <table>
                         <tr>
                             <td class="td1 tdstyle">Texte De Réclamation</td>
@@ -118,6 +129,7 @@
                     <form action="{{url('/traitementetat')}}" method="POST" enctype="multipart/form-data">
                         @method('post')
                         @csrf
+                        <label class="labphone" style="color:green;">État D'avancement de Réclamation</label>
                         <table>
                             <tr>
                                 <td class="td1 tdstyle1">État D'avancement de Réclamation</td>
@@ -145,6 +157,7 @@
                     <form action="{{url('/traitementreponse')}}" method="POST" enctype="multipart/form-data">
                         @method('post')
                         @csrf
+                        <label class="labphone" style="color:green;">Les Reponses</label>
                         <table>
                             <tr>
                                 <td class="td1 tdstyle1">Les Reponses</td>
@@ -167,13 +180,12 @@
             <br><br>
             <div class="card">
                 <div>
-                    <h3><strong style="color:red;">État Actuel</strong></h3>
+                    <h3><strong style="color:red;">État Actuel De La Réclamation</strong></h3>
                 </div>
                 <div class="card-body">
                     <table>
                         <tr>
-                            <td class="td1">État D'avancement de Réclamation</td>
-                            <td class="td2"><label class="lab">
+                            <td ><label class="lab">
                                     @foreach($etat as $e)
                                     {{$e->etat}}rr
                                     @endforeach
@@ -192,7 +204,17 @@
                     @foreach($reponse as $r)
                     <table>
                         <tr>
-                            <td class="td2"><label class="lab">{{$r->reponse}}</label></td>
+                            <form action="{{url('/delete')}}" method="POST" enctype="multipart/form-data">
+                                @method('post')
+                                @csrf
+                                <input type="hidden" name="id" value="{{$r->id}}">
+                                <input type="hidden" name="id_chikaya" value="{{$r->id_chikaya}}">
+                                <td style="width:90%;"><label class="lab">{{$r->reponse}}</label></td>
+                                <td style="width:10%;">
+                                <input type="image" src="{{asset('image/delete.png')}}" width="30" alt="delete">
+                                    
+                                </td>
+                            </form>
                         </tr>
                     </table>
                     <br>

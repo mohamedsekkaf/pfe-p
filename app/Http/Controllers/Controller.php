@@ -169,6 +169,11 @@ class Controller extends BaseController
                                   
     }
 
-
+    public function delete(Request $request){
+        $id = $request->input('id');
+        $id_chikaya = $request->input('id_chikaya');
+        DB::table('reponses')->where('id',$id)->delete();
+        return redirect('/showdetails/'.$id_chikaya);
+    }
     
 }
