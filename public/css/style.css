@@ -175,7 +175,6 @@ table{
 
 }
 .dropdown-menu{
-    text-align: center;
     width: 100%;
 
 }
@@ -184,7 +183,7 @@ table{
     background-color: #1AE7FF;
     border: none;
     color:black;
-    font-size: 20px;
+    font-size: 16px;
     border-radius: 10px;
     padding: 10px;
 
