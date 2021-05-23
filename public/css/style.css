@@ -71,6 +71,25 @@ label{
     font-size: 35px;
     display: none;
 }
+.bars-menu{
+    font-size: 35px;
+    color: aqua;
+    margin-left: 20px;
+    display: none;
+}
+
+.left{
+    float: left;
+    width: 20%;
+    background-color: #1AE7FF;
+    text-align: center;
+    height: 100vh;
+    border-radius: 10px;
+}
+.main{
+    float: right;
+    width:80%;
+}
 @media (max-width:770px) {
     .ul{
         display: none;
@@ -98,16 +117,27 @@ label{
     #check:checked ~ .ul:first-of-type {
         display: block;
     }
+    .left{
+        display: none;
+    }
+    .main{
+        width: 100%;
+    }
+    .bars-menu{
+        display: block;
+    }
+    #check1:checked ~ .ul{
+        display: block;
+    }
 
 
 }
-
 #check{
     display: none;
 }
-
-
-
+#check1{
+    display: block;
+}
 #input1 , #input2,#input3,#input4,#input5,#input6,#input7,#input8,#input9,#input10,#input11{
     background-color: rgb(146, 146, 146);
     box-shadow:  1px 1px 1px 1px rgba(0,0,0,.075);
@@ -133,24 +163,28 @@ table{
     color: rgb(255, 0, 0);
 }
 
-.left{
-    float: left;
-    width: 20%;
-    background-color: #1AE7FF;
-    text-align: center;
-    height: 100vh;
-    border-radius: 10px;
-}
-.main{
-    float: right;
-    width:80%;
-}
+
 .btn1{
     width: 100%;
     background-color: #1AE7FF;
     border: none;
     color:black;
     font-size: 25px;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+.dropdown-menu{
+    text-align: center;
+    width: 100%;
+
+}
+.btn3 {
+    width: 100%;
+    background-color: #1AE7FF;
+    border: none;
+    color:black;
+    font-size: 20px;
     border-radius: 10px;
     padding: 10px;
 
@@ -208,3 +242,7 @@ table{
 .labsubmit{
     cursor: pointer;
 }
+
+
+
+
