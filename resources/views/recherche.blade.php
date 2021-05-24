@@ -21,15 +21,15 @@
                     style="text-decoration:none; color:black;">Département des sports</a><br><br>
                 <a class="btn3" href="{{url('details/Département de la police administrative')}}"
                     style="text-decoration:none; color:black;">Département de la police administrative</a><br><br>
+                <form action="{{ url('/recherche') }}" method="POST" enctype="multipart/form-data">
+                    @method('post')
+                    @csrf
+                    <div>
+                        <input type="text" placeholder="Entrez CIN" name="cin" class="form-control" required>
+                        <input type="submit" class="btn1" value="Rechercher">
+                    </div>
+                </form>
             </div>
-            <form action="{{ url('/recherche') }}" method="POST" enctype="multipart/form-data">
-                @method('post')
-                @csrf
-                <div>
-                    <input type="text"  placeholder="Entrez CIN" name="cin" class="form-control" required>
-                    <input type="submit" class="btn1" value="Rechercher">
-                </div>
-            </form>
         </div>
     </div>
     <div class="left">
@@ -55,8 +55,8 @@
             @method('post')
             @csrf
             <div>
-                <input type="text"  placeholder="Entrez CIN" name="cin" class="form-control" required><br>
-                <input type="submit" class="btn" value="Rechercher">
+                <input type="text" placeholder="Entrez CIN" name="cin" class="form-control" required><br>
+                <input type="submit" class="btn1" value="Rechercher">
             </div>
         </form>
     </div>

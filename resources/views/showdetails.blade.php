@@ -187,7 +187,7 @@
                         <tr>
                             <td ><label class="lab">
                                     @foreach($etat as $e)
-                                    {{$e->etat}}rr
+                                    {{$e->etat}}
                                     @endforeach
                                 </label></td>
                         </tr>

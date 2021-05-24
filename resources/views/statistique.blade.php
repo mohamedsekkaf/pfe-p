@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Statistique</div>
                 <div class="panel-body">
-                    <canvas id="canvas" height="300" width="200"></canvas>
+                    <canvas id="canvas" height="200" width="200"></canvas>
                 </div>
             </div>
         </div>

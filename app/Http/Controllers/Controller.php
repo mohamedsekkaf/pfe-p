@@ -7,6 +7,8 @@ use App\Reponse;
 use App\User;
 use DB;
 use Auth;
+use Carbon\Carbon;
+
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -63,7 +65,7 @@ class Controller extends BaseController
         return view('succes');
     }
     function home(){
-        $chikaya = Chikaya::all();
+        $chikaya = Chikaya::orderBy('id','desc')->get();
         return view('home',compact('chikaya'));
     }
     public function logout(Request $request) {
@@ -71,7 +73,7 @@ class Controller extends BaseController
         return redirect('/');
       }
       public function show($departement){
-          $chikaya = Chikaya::where('nom_departement',$departement)->get();
+          $chikaya = Chikaya::where('nom_departement',$departement)->orderBy('id','desc')->get();
           return view('/details',compact('chikaya'));
       }
 
@@ -84,7 +86,7 @@ class Controller extends BaseController
       public function check(Request $request){
           $cin = $request->input('cin');
           $password = $request->input('password');
-          $chikaya = Chikaya::where('cin',$cin)->get();
+          $chikaya = Chikaya::where('cin',$cin)->orderBy('id','desc')->get();
           $var = 0;
             foreach($chikaya as $ch){
                 if( $ch->password == $password){
@@ -110,7 +112,7 @@ class Controller extends BaseController
             return view('result');
       }
       public function showdetails($id){
-        $chikaya = Chikaya::where('id',$id)->get();
+        $chikaya = Chikaya::where('id',$id)->orderBy('id','desc')->get();
         $etat = Etat::where('id_chikaya',$id)->get();
         $reponse = Reponse::where('id_chikaya',$id)->get();
         return view('/showdetails',compact('chikaya','etat','reponse'));
@@ -192,5 +194,27 @@ class Controller extends BaseController
     }
     public function rechercher(){
         return view('recherche');
+    }
+
+
+// test 
+    public function test()
+    {
+ 
+ $record = User::select(\DB::raw("COUNT(*) as count"), \DB::raw("DAYNAME(created_at) as day_name"), \DB::raw("DAY(created_at) as day"))
+    ->where('created_at', '>', Carbon::today()->subDay(6))
+    ->groupBy('day_name','day')
+    ->orderBy('day')
+    ->get();
+  
+     $data = [];
+ 
+     foreach($record as $row) {
+        $data['label'][] = $row->day_name;
+        $data['data'][] = (int) $row->count;
+      }
+ 
+    $data['chart_data'] = json_encode($data);
+    return view('chart-js', $data);
     }
 }
