@@ -62,10 +62,14 @@
     </div>
     <div class="main">
         <h1 class="title">Les Réclamation</h1>
+        <div>
+            <h4 style="color:red;text-align:center;">{{$result}}</h2>
+        </div>
         <!-- mode desktop -->
         @foreach($chikaya as $ch)
 
         <div class="card carddesktop">
+
             <div class="card-body">
                 <h4 class="card-title"><i style="color:red">Sujet</i> : {{$ch->reclamation}}</h4>
                 <table>

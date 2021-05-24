@@ -83,7 +83,7 @@ label{
     width: 20%;
     background-color: #1AE7FF;
     text-align: center;
-    height: 100vh;
+    height: 109vh;
     border-radius: 10px;
 }
 .main{
@@ -93,7 +93,9 @@ label{
 .menu{
     display: none;
 }
-
+.modephone{
+    display: none;
+}
 @media (max-width:850px) {
     .ul{
         display: none;
@@ -136,7 +138,15 @@ label{
     .menu{
         display: block;
     }
-
+    .modedesktop{
+        display: none;
+    }
+    .widthtop{
+        width: 100%;
+    }
+    .modephone{
+        display: block;
+    }
 
 }
 .cardphone{

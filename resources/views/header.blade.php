@@ -29,6 +29,7 @@
                 <li><a href="{{url('/statistique')}}">Statistique</a></li>
                 <li><a href="{{url('/home')}}">{{auth::user()->name}}</a></li>
                 <li><a href="{{route('logout')}}">Logout</a></li>
+                
                 <li></li>
                 @endguest
             </ul>

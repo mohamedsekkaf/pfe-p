@@ -163,7 +163,7 @@
                                 <li> <img src="{{asset('image/check.png')}}" alt="" width="20">wbwerfv</li>
                                 </ul>
                                 <br>
-                                <input type="checkbox" name="check" id="check" required><i
+                                <input type="checkbox" name="check" id="check-acc" required><i
                                     for="check">Accepté</i>
                         </div>
                     </div>

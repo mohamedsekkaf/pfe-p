@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Statistique</div>
                 <div class="panel-body">
-                    <canvas id="canvas" height="280" width="600"></canvas>
+                    <canvas id="canvas" height="300" width="200"></canvas>
                 </div>
             </div>
         </div>
@@ -61,8 +61,8 @@
             options: {
                 elements: {
                     rectangle: {
-                        borderWidth: 2,
-                        borderColor: '',
+                        borderWidth: 1,
+                        borderColor: 'white',
                         borderSkipped: 'bottom'
                     }
                 },

@@ -175,5 +175,22 @@ class Controller extends BaseController
         DB::table('reponses')->where('id',$id)->delete();
         return redirect('/showdetails/'.$id_chikaya);
     }
-    
+    public function recherche(Request $request){
+        $cin = $request->input('cin');
+        $chikaya = Chikaya::where('cin',$cin)->get();
+        $var = 0;
+        foreach($chikaya as $ch){
+            $var++;
+        }
+        if($var === 0){
+            $result = 'Aucune Résultat';
+            return view('/recherche',compact('chikaya','result'));
+        }else{
+            $result = '';
+            return view('/recherche',compact('chikaya','result'));
+        }
+    }
+    public function rechercher(){
+        return view('recherche');
+    }
 }

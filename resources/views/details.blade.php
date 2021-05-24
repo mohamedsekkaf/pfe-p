@@ -22,6 +22,14 @@
                 <a class="btn3" href="{{url('details/Département de la police administrative')}}"
                     style="text-decoration:none; color:black;">Département de la police administrative</a><br><br>
             </div>
+            <form action="{{ url('/recherche') }}" method="POST" enctype="multipart/form-data">
+                @method('post')
+                @csrf
+                <div>
+                    <input type="text" placeholder="Entrez CIN" name="cin" class="form-control" required>
+                    <input type="submit" class="btn1" value="Rechercher">
+                </div>
+            </form>
         </div>
     </div>
     <div class="left">
@@ -42,6 +50,14 @@
         <br><br>
         <button class="btn1"><a href="{{url('/details/Département de la police administrative')}}"
                 style="text-decoration:none; color:black;">Département de la police administrative</a></button>
+        <form action="{{ url('/recherche') }}" method="POST" enctype="multipart/form-data">
+            @method('post')
+            @csrf
+            <div>
+                <input type="text" name="cin"  placeholder="Entrez CIN" class="form-control" required>
+                <input type="submit" class="btn1" value="Rechercher">
+            </div>
+        </form>
     </div>
     <div class="main">
         <h1 class="title">Les Réclamation</h1>
@@ -85,7 +101,8 @@
                 <h4 class="card-title"><i style="color:red">Sujet :</i> {{$ch->reclamation}}</h4>
                 <table>
                     <tr>
-                        <td style="text-align:left; width:40%;margin-left:10px"><i style="color:green;">Nom et Prénom :</i></td>
+                        <td style="text-align:left; width:40%;margin-left:10px"><i style="color:green;">Nom et Prénom
+                                :</i></td>
                         <td style="text-align:left; width:60%">{{$ch->nom}} {{$ch->prenom}}</td>
                     </tr>
                 </table>
