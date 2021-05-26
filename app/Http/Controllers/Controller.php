@@ -8,7 +8,9 @@ use App\User;
 use DB;
 use Auth;
 use Carbon\Carbon;
-
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -65,7 +67,7 @@ class Controller extends BaseController
         return view('succes');
     }
     function home(){
-        $chikaya = Chikaya::orderBy('id','desc')->get();
+        $chikaya = Chikaya::orderBy('id','desc')->paginate(4);
         return view('home',compact('chikaya'));
     }
     public function logout(Request $request) {
@@ -152,12 +154,12 @@ class Controller extends BaseController
         $d5 = 'Département de la police administrative';
 
         foreach ($year as $key => $value) {
-            $chikaya[] = Chikaya::where(\DB::raw("DATE_FORMAT(date, '%Y')"),$value)->count();
-            $dd1[] = Chikaya::where(DB::raw("DATE_FORMAT(date, '%Y')"),$value)->where('nom_departement',$d1)->count();
-            $dd2[] = Chikaya::where(DB::raw("DATE_FORMAT(date, '%Y')"),$value)->where('nom_departement',$d2)->count();
-            $dd3[] = Chikaya::where(DB::raw("DATE_FORMAT(date, '%Y')"),$value)->where('nom_departement',$d3)->count();
-            $dd4[] = Chikaya::where(DB::raw("DATE_FORMAT(date, '%Y')"),$value)->where('nom_departement',$d4)->count();
-            $dd5[] = Chikaya::where(DB::raw("DATE_FORMAT(date, '%Y')"),$value)->where('nom_departement',$d5)->count();
+            $chikaya[] = Chikaya::where(\DB::raw("to_char(created_at, '%Y')"),$value)->count();
+            $dd1[] = Chikaya::where(DB::raw("to_char(date, '%Y')"),$value)->where('nom_departement',$d1)->count();
+            $dd2[] = Chikaya::where(DB::raw("to_char(date, '%Y')"),$value)->where('nom_departement',$d2)->count();
+            $dd3[] = Chikaya::where(DB::raw("to_char(date, '%Y')"),$value)->where('nom_departement',$d3)->count();
+            $dd4[] = Chikaya::where(DB::raw("to_char(date, '%Y')"),$value)->where('nom_departement',$d4)->count();
+            $dd5[] = Chikaya::where(DB::raw("to_char(date, '%Y')"),$value)->where('nom_departement',$d5)->count();
 
 
         }

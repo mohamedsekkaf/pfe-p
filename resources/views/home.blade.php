@@ -137,6 +137,7 @@
             </div>
         </div>
         @endforeach
+        {{ $chikaya->links() }}
     </div>
 </div>
 @endsection('content')
