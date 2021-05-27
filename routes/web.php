@@ -11,7 +11,7 @@ use App\Http\Controllers\Controller;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes(['register'=>true]);
+Auth::routes(['register'=>false]);
 
 
 Route::get('/', function () {

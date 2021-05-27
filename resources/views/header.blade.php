@@ -24,7 +24,6 @@
                 @guest
                 <li><a href="{{url('/suivez')}}">Suivez La Réclamation</a></li>
                 <li><a href="{{route('login')}}">Login</a></li>
-                <li><a href="{{route('register')}}">Register</a></li>
                 @else
                 <li><a href="{{url('/statistique')}}">Statistique</a></li>
                 <li><a href="{{url('/home')}}">{{auth::user()->name}}</a></li>
