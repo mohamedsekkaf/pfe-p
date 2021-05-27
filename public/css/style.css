@@ -220,6 +220,7 @@ table{
 }
 .btn1:hover{
     background-color: wheat;
+    border-radius: 10px;
 
 }
 .title{

@@ -70,7 +70,7 @@
                 responsive: true,
                 title: {
                     display: true,
-                    text: 'Yearly Chikaya Joined'
+                    text: 'Enregistrer Les Réclamations Par Année'
                 }
             }
         });
