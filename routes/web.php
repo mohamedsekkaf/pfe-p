@@ -36,4 +36,6 @@ Route::post('/recherche','Controller@recherche');
 Route::get('/recherche','Controller@rechercher');
 Route::get('/statistique', 'Controller@statistique');
 
+
+
 });

@@ -23,6 +23,7 @@
     var dd3 = <?php echo $dd3; ?>;
     var dd4 = <?php echo $dd4; ?>;
     var dd5 = <?php echo $dd5; ?>;
+    var month = <?php echo $month; ?>
 
     var barChartData = {
         labels: year,

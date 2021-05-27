@@ -7,6 +7,7 @@ use App\Reponse;
 use App\User;
 use DB;
 use Auth;
+use Charts;
 use Carbon\Carbon;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
@@ -61,7 +62,8 @@ class Controller extends BaseController
         Etat::create($data1);
         // $data2  = array('id_chikaya'=>$id,'reponse'=>'non');
         // Reponse::create($data2);
-        return redirect('/succes');
+        $succes = 'Votre Reclamation a été Enregistrer';
+        return view('/succes',compact('succes'));
     }
     function succes(){
         return view('succes');
@@ -145,7 +147,8 @@ class Controller extends BaseController
 
         
 
-        $year = ['2020','2021','2022','2023','2024','2025','2026'];
+        $year = ['2020','2021','2022','2023','2024','2025'];
+        $month = ['1','2','3','4','5','6','7','8','9','10','11','12'];
         $chikaya = [];
         $d1 = 'Département économique';
         $d2 = 'Département de l environnement';
@@ -169,7 +172,8 @@ class Controller extends BaseController
                                   ->with('dd2',json_encode($dd2,JSON_NUMERIC_CHECK))
                                   ->with('dd3',json_encode($dd3,JSON_NUMERIC_CHECK))
                                   ->with('dd4',json_encode($dd4,JSON_NUMERIC_CHECK))
-                                  ->with('dd5',json_encode($dd5,JSON_NUMERIC_CHECK));
+                                  ->with('dd5',json_encode($dd5,JSON_NUMERIC_CHECK))
+                                  ->with('month',json_encode($month,JSON_NUMERIC_CHECK));
                                   
     }
 

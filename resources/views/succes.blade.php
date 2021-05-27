@@ -8,7 +8,7 @@
                 <img src="{{asset('image/chikaya.png')}}" alt="" width="300">
             </div>
             <div class="card-body">
-                <h4 class="succes">Votre Reclamation a été Enregistrer</h4>
+                <h4 class="succes">{{$succes}}</h4>
             </div>
         </div>
     </div>
