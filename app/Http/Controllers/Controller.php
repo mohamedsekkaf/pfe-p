@@ -49,7 +49,7 @@ class Controller extends BaseController
         $data= array('nom'=>$nom,'prenom'=>$prenom,'cin'=>$cin,'telephone'=>$telephone,'email'=>$email,'addresse'=>$addresse,
         'region'=>$region,'province'=>$province,'nom_departement'=>$nom_departement,
         'reclamation'=>$reclamation,'texte_reclamation'=>$texte_reclamation,
-        'check'=>$check,'password'=>$password ,'date'=>date('Y-m-d H:i:s'));
+        'check'=>$check,'password'=>$password ,'date'=>date('Y'));
         Chikaya::create($data);
         $var1 = Chikaya::all();
         $id = 0; 
@@ -154,13 +154,13 @@ class Controller extends BaseController
         $d5 = 'Département de la police administrative';
 
         foreach ($year as $key => $value) {
-            $chikaya[] = Chikaya::where(\DB::raw("to_char(created_at, '%Y')"),$value)->count();
-            $dd1[] = Chikaya::where(DB::raw("to_char(date, '%Y')"),$value)->where('nom_departement',$d1)->count();
-            $dd2[] = Chikaya::where(DB::raw("to_char(date, '%Y')"),$value)->where('nom_departement',$d2)->count();
-            $dd3[] = Chikaya::where(DB::raw("to_char(date, '%Y')"),$value)->where('nom_departement',$d3)->count();
-            $dd4[] = Chikaya::where(DB::raw("to_char(date, '%Y')"),$value)->where('nom_departement',$d4)->count();
-            $dd5[] = Chikaya::where(DB::raw("to_char(date, '%Y')"),$value)->where('nom_departement',$d5)->count();
-
+            $chikaya[] = Chikaya::where(\DB::raw('date'),$value)->count();
+            $dd1[] = Chikaya::where(DB::raw('date'),$value)->where('nom_departement',$d1)->count();
+            $dd2[] = Chikaya::where(DB::raw('date'),$value)->where('nom_departement',$d2)->count();
+            $dd3[] = Chikaya::where(DB::raw('date'),$value)->where('nom_departement',$d3)->count();
+            $dd4[] = Chikaya::where(DB::raw('date'),$value)->where('nom_departement',$d4)->count();
+            $dd5[] = Chikaya::where(DB::raw('date'),$value)->where('nom_departement',$d5)->count();
+            // $dd5[] = Chikaya::where(DB::raw("DATE_FORMAT(date, '%Y')"),$value)->where('nom_departement',$d5)->count();
 
         }
     	return view('statistique')->with('year',json_encode($year,JSON_NUMERIC_CHECK))
@@ -200,23 +200,5 @@ class Controller extends BaseController
 
 
 // test 
-    public function test()
-    {
- 
- $record = User::select(\DB::raw("COUNT(*) as count"), \DB::raw("DAYNAME(created_at) as day_name"), \DB::raw("DAY(created_at) as day"))
-    ->where('created_at', '>', Carbon::today()->subDay(6))
-    ->groupBy('day_name','day')
-    ->orderBy('day')
-    ->get();
-  
-     $data = [];
- 
-     foreach($record as $row) {
-        $data['label'][] = $row->day_name;
-        $data['data'][] = (int) $row->count;
-      }
- 
-    $data['chart_data'] = json_encode($data);
-    return view('chart-js', $data);
-    }
+
 }
