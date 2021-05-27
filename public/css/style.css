@@ -156,6 +156,7 @@ label{
 .cardphone{
     display: none;
 }
+
 @media (max-width:600px) {
     .cardphone{
         display: block;
@@ -163,6 +164,8 @@ label{
     .carddesktop{
         display: none;
     }
+    
+    
 }
 #check{
     display: none;

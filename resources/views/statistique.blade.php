@@ -7,12 +7,14 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Statistique</div>
                 <div class="panel-body">
-                    <canvas id="canvas" height="200" width="200"></canvas>
+                    <canvas  id="canvas" height="150" width="300"></canvas>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 <script>    
     
@@ -23,7 +25,6 @@
     var dd3 = <?php echo $dd3; ?>;
     var dd4 = <?php echo $dd4; ?>;
     var dd5 = <?php echo $dd5; ?>;
-    var month = <?php echo $month; ?>
 
     var barChartData = {
         labels: year,
@@ -55,8 +56,8 @@
     };
 
     window.onload = function() {
-        var ctx = document.getElementById("canvas").getContext("2d");
-        window.myBar = new Chart(ctx, {
+        var ctz = document.getElementById("canvas").getContext("2d");
+        window.myBar = new Chart(ctz, {
             type: 'bar',
             data: barChartData,
             options: {
