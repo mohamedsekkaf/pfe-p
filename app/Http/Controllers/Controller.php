@@ -69,7 +69,7 @@ class Controller extends BaseController
         return view('succes');
     }
     function home(){
-        $chikaya = Chikaya::orderBy('id','desc')->paginate(4);
+        $chikaya = Chikaya::orderBy('id','desc')->paginate(10);
         return view('home',compact('chikaya'));
     }
     public function logout(Request $request) {
