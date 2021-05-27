@@ -7,7 +7,7 @@
         <img class="chikaya" src="{{asset('image/chikaya.png')}}" alt="chikaya">
         </div>
         <div class="card-body">
-            <div class="card">
+            <div class="card cardbox" >
                 <div>
                     <h4 style="color:green;">Les Informations</h4>
                 </div>
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <br>
-            <div class="card">
+            <div class="card cardbox">
                 <div>
                     <h3 style="color:green;">Etat De Votre Reclamation </h3>
                 </div>
@@ -56,7 +56,7 @@
                 </div>
             </div>
             <br><br>
-            <div class="card">
+            <div class="card cardbox">
                 <h3 style="color:green;">Les Reponses</h3>
                 <div class="card-body">
                     <table>

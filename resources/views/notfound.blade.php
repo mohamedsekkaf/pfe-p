@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
 <br><br>
-    <div class="card">
+    <div class="card cardbox">
     <br>
         <div>
             <img class="notfound" src="{{ asset('image/notfound.png')}}" alt="not found" srcset="">

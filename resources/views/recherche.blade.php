@@ -68,7 +68,7 @@
         <!-- mode desktop -->
         @foreach($chikaya as $ch)
 
-        <div class="card carddesktop">
+        <div class="card carddesktop cardbox">
 
             <div class="card-body">
                 <h4 class="card-title"><i style="color:red">Sujet</i> : {{$ch->reclamation}}</h4>
@@ -99,7 +99,7 @@
         <!-- mode telephonique -->
         @foreach($chikaya as $ch)
         <br>
-        <div class="card cardphone">
+        <div class="card cardphone cardbox">
             <div class="card-body">
                 <div>
                     <img class="chikaya1" src="{{asset('image/chikaya.png')}}" alt="chikaya">

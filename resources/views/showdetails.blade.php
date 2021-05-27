@@ -10,7 +10,7 @@
         </div>
         <div class="card-body">
             <br>
-            <div class="card">
+            <div class="card cardbox">
                 <div class="card-body">
                     <br>
                     <label class="labphone" style="color:green;">Nom</label>
@@ -64,7 +64,7 @@
 
             </div>
             <br>
-            <div class="card">
+            <div class="card cardbox">
                 <div class="card-body">
                     <br><!--  -->
                     <label class="labphone" style="color:green;">Region</label>
@@ -93,7 +93,7 @@
                 </div>
             </div>
             <br>
-            <div class="card">
+            <div class="card cardbox">
                 <div class="card-body">
                     <br><!--  -->
                     <label class="labphone" style="color:green;">Sujet De Réclamation</label>
@@ -118,10 +118,10 @@
     </div>
     @endforeach
     <br><br>
-    <div class="card">
+    <div class="card ">
         <div class="card-body">
 
-            <div class="card">
+            <div class="card cardbox">
                 <div>
                     <h3><strong style="color:red;"> Traitement</strong></h3>
                 </div>
@@ -178,7 +178,7 @@
             </div>
 
             <br><br>
-            <div class="card">
+            <div class="card cardbox">
                 <div>
                     <h3><strong style="color:red;">État Actuel De La Réclamation</strong></h3>
                 </div>
@@ -196,7 +196,7 @@
                 </div>
             </div>
             <br><br>
-            <div class="card">
+            <div class="card cardbox">
                 <div>
                     <h3><strong style="color:red;"> Les Réponses Déjà Envoyé</strong></h3>
                 </div>

@@ -1,7 +1,7 @@
 @extends('header')
 @section('content')
 <div class="container">
-    <div class="card">
+    <div class="card cardbox">
         <div>
             <img class="chikaya" src="{{asset('image/chikaya.png')}}" alt="chikaya">
         </div>

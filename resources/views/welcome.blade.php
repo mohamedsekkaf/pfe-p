@@ -12,7 +12,7 @@
                 </div>
                 <div class="card-body">
                     <!-- Données personnelles-->
-                    <div class="card">
+                    <div class="card ">
                         <div class="card-body">
                             <h4 class="card-title">Données personnelles</h4>
                             <br><br>

@@ -3,7 +3,7 @@
 <div class="container">
     <br>
     <div class="col-12">
-        <div class="card">
+        <div class="card cardbox">
             <div>
                 <img src="{{asset('image/chikaya.png')}}" alt="" width="300">
             </div>
