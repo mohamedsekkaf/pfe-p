@@ -34,6 +34,7 @@ class CreateChikayasTable extends Migration
             $table->timestamps();
             $table->string('date');
         });
+
     }
 
     /**
