@@ -73,7 +73,7 @@ class Controller extends BaseController
           ('Laravel Basic Testing Mail');
        $message->from('pfe.p@dorossibac.com','MSOS');
     });
-    $message= ' Check your inbox to get your password';
+    $message= ' Vérifiez votre boîte mail pour obtenir votre mot de passe';
         // <<<<<<<<<----- sending mail from gmail  ----->>>>>>> 
         return view('/succes',compact('succes','message'));
     }
