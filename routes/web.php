@@ -35,7 +35,7 @@ Route::post('/delete','Controller@delete');
 Route::post('/recherche','Controller@recherche');
 Route::get('/recherche','Controller@rechercher');
 Route::get('/statistique', 'Controller@statistique');
+Route::post('/sendmail' , 'Controller@sendmail');
 
-
-
+Route::get('sendbasicemail','Controller@basic_email');
 });

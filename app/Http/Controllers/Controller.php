@@ -8,6 +8,8 @@ use App\User;
 use DB;
 use Auth;
 use Charts;
+use Mail;
+
 use Carbon\Carbon;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
@@ -24,10 +26,10 @@ class Controller extends BaseController
 
     function add(Request $request){
         $request->validate([
-            'password'=>'required|unique:chikayas',
+            '',
         ],
         [
-            'password.unique'=>'Entrez un mot de passe fort',
+            ''=>'',
         ]);
         $nom = $request->input('nom');
         $prenom = $request->input('prenom');
@@ -45,7 +47,7 @@ class Controller extends BaseController
         
         $check = $request->input('check');
 
-        $password = $request->input('password');
+        $password = rand();
 
         $data= array('nom'=>$nom,'prenom'=>$prenom,'cin'=>$cin,'telephone'=>$telephone,'email'=>$email,'addresse'=>$addresse,
         'region'=>$region,'province'=>$province,'nom_departement'=>$nom_departement,
@@ -63,7 +65,17 @@ class Controller extends BaseController
         // $data2  = array('id_chikaya'=>$id,'reponse'=>'non');
         // Reponse::create($data2);
         $succes = 'Votre Reclamation a été Enregistrer';
-        return view('/succes',compact('succes'));
+
+        // <<<<<<<<<----- sending mail from gmail  ----->>>>>>> 
+        $data = array('name'=>$nom,'prenom'=> $prenom,'password'=>$password);
+    Mail::send('mail', $data, function($message) use ($email) {
+       $message->to($email, 'Tutorials Point')->subject
+          ('Laravel Basic Testing Mail');
+       $message->from('pfe.p@dorossibac.com','MSOS');
+    });
+    $message= ' Check your inbox to get your password';
+        // <<<<<<<<<----- sending mail from gmail  ----->>>>>>> 
+        return view('/succes',compact('succes','message'));
     }
     function succes(){
         return view('succes');
@@ -203,6 +215,24 @@ class Controller extends BaseController
     }
 
 
-// test 
+// use mail 
+public function sendmail(Request $request) {
+    $id = $request->input('id');
+    $nom = $request->input('nom');
+    $prenom = $request->input('prenom');
+    $email = $request->input('email');
+    $sujet_reclamation = $request->input('sujet_reclamation');
+    $sendmail = $request->input('sendmail');
+    $data = array('nom'=>$nom,'prenom'=>$prenom,'email'=>$email,'sujet_reclamation'=>$sujet_reclamation,'sendmail'=>$sendmail);
+    Mail::send('sendmailto', $data, function($message) use ($nom,$prenom,$email,$sujet_reclamation,$id,$sendmail) {
+        
+       $message->to($email, 'Tutorials Point')->subject
+          ('Laravel Basic Testing Mail');
+       $message->from('pfe.p@dorossibac.com','MSOS');
+       
+    });
+    return redirect('/showdetails/'.$id);
+ }
+ 
 
 }

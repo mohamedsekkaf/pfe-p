@@ -9,6 +9,7 @@
             </div>
             <div class="card-body">
                 <h4 class="succes">{{$succes}}</h4>
+                <h3>{{$message}}</h3>
             </div>
         </div>
     </div>

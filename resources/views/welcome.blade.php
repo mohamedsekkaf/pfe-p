@@ -53,7 +53,8 @@
                                     <td class="td1">Telephone</td>
                                     <td class="td2"><input placeholder="Telephone" value="{{old('telephone')}}"
                                             name="telephone" id="input4" type="number" class="form-control" required>
-                                        <label id="lab4" style="color:red;"></label></td>
+                                        <label id="lab4" style="color:red;"></label>
+                                    </td>
                                 </tr>
                             </table>
                             <br>
@@ -61,7 +62,7 @@
                             <table>
                                 <tr>
                                     <td class="td1">Email</td>
-                                    <td class="td2"><input placeholder="Email" name="email" value="{{old('email')}}"
+                                    <td class="td2"><input placeholder="Entrez Un Correcte Email" name="email" value="{{old('email')}}"
                                             id="input5" type="email" class="form-control" required><label id="lab5"
                                             style="color:red;"></label>
                                     </td>
@@ -158,17 +159,16 @@
                             <h4 class="card-title">Les Condition</h4>
                             <br>
                             <ol style="float:left;text-align:left;">
-                                <li><img src="{{asset('image/check.png')}}" alt="" width="20"> ewv</li>
-                                <li> <img src="{{asset('image/check.png')}}" alt="" width="20">ewvgwef</li>
-                                <li> <img src="{{asset('image/check.png')}}" alt="" width="20">wbwerfv</li>
+                                <li><img src="{{asset('image/check.png')}}" alt="" width="20">  tout les données entrez est  correcte</li>
+                                <li> <img src="{{asset('image/check.png')}}" alt="" width="20">  condition 2</li>
+                                <li> <img src="{{asset('image/check.png')}}" alt="" width="20">  condition 3</li>
                                 </ul>
                                 <br>
-                                <input type="checkbox" name="check" id="check-acc" required><i
-                                    for="check">Accepté</i>
+                                <input type="checkbox" name="check" id="check-acc" required><i for="check">Accepté</i>
                         </div>
                     </div>
                     <br><!-- Suivez la reclamation -->
-                    <div class="card">
+                    <!-- <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Suivez la reclamation</h4>
                             <br><br>
@@ -194,7 +194,7 @@
                                 </tr>
                             </table>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div>
                     <input type="submit" id="submit" value="Enregistrer">
@@ -206,7 +206,5 @@
         <br><br><br><br>
     </div>
 </div>
-<?php
-echo date('Y');;
-?>
+
 @endsection('ontent')

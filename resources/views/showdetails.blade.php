@@ -161,8 +161,8 @@
                         <table>
                             <tr>
                                 <td class="td1 tdstyle1">Les Reponses</td>
-                                <td class="td2 tdstyle"><textarea class="form-control" name="reponse" value="skfoek"
-                                        id="input1" cols="10" rows="6"></textarea></td>
+                                <td class="td2 tdstyle"><textarea placeholder="Entrez Un Réponse" class="form-control"
+                                        name="reponse" id="input1" cols="10" rows="6"></textarea></td>
                             </tr>
                         </table>
                         <br>
@@ -173,6 +173,35 @@
                         echo '<input type="hidden" name="id" value="'.$var1.'" id="idhide">';
                         ?>
                         <input type="submit" value="Envoyer" id="submit">
+                    </form>
+                    <br><br>
+                    <form action="{{url('/sendmail')}}" method="POST" enctype="multipart/form-data">
+                        @method('post')
+                        @csrf
+                        <label class="labphone tdstyle1">Email Text</label>
+                        <table>
+                            <tr>
+                                <td class="td1 tdstyle1">Email Text</td>
+                                <td class="td2 tdstyle1"><textarea name="sendmail" class="form-control" id="input1"
+                                        placeholder="Entrez Votre Contenue De Mail" cols="10" rows="6"></textarea></td>
+                            </tr>
+                        </table>
+                        <br>
+                        <input type="submit" id="submit" value="Envoyer Mail">
+                        <?php
+                            foreach($chikaya as $ch){
+                                $id = $ch->id;
+                                $nom = $ch->nom;
+                                $prenom = $ch->prenom;
+                                $email = $ch->email;
+                                $sujet_reclamation =$ch->reclamation;
+                            }
+                            echo '<input type="hidden" name="id" value="'.$id.'" id="idhide">';
+                            echo '<input type="hidden" name="nom" value="'.$nom.'" id="idhide">';
+                            echo '<input type="hidden" name="prenom" value="'.$prenom.'" id="idhide">';
+                            echo '<input type="hidden" name="email" value="'.$email.'" id="idhide">';
+                            echo '<input type="hidden" name="sujet_reclamation" value="'.$sujet_reclamation.'" id="idhide">';
+                        ?>
                     </form>
                 </div>
             </div>
@@ -185,7 +214,7 @@
                 <div class="card-body">
                     <table>
                         <tr>
-                            <td ><label class="lab">
+                            <td><label class="lab">
                                     @foreach($etat as $e)
                                     {{$e->etat}}
                                     @endforeach
@@ -211,8 +240,8 @@
                                 <input type="hidden" name="id_chikaya" value="{{$r->id_chikaya}}">
                                 <td style="width:90%;"><label class="lab">{{$r->reponse}}</label></td>
                                 <td style="width:10%;">
-                                <input type="image" src="{{asset('image/delete.png')}}" width="30" alt="delete">
-                                    
+                                    <input type="image" src="{{asset('image/delete.png')}}" width="30" alt="delete">
+
                                 </td>
                             </form>
                         </tr>

@@ -39,6 +39,7 @@ ul li a{
     padding: 10px 10px;
     background-image: linear-gradient(to left top, #009eff, #00b2ff, #00c5ff, #00d7ff, #1ae7ff);    border-radius: 10px;
     text-decoration: none;
+
 }
 ul li a:hover{
     font-size: 32px;
