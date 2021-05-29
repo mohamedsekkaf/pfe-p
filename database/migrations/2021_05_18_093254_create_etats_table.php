@@ -25,7 +25,7 @@ class CreateEtatsTable extends Migration
 
 
 
-        for($i = 0 ; $i < 20 ;$i++){
+        for($i = 0 ; $i < 4 ;$i++){
             $data= array('nom'=>'sekkaf','prenom'=>'mohammed','cin'=>'MD16745','telephone'=>rand(10,100000000000),'email'=>'sekkaf@gmail.com','addresse'=>'el jadida',
             'region'=>'casablanca-settat','province'=>'el jadida','nom_departement'=>'Département économique',
             'reclamation'=>'text','texte_reclamation'=>'text',
@@ -40,7 +40,7 @@ class CreateEtatsTable extends Migration
             $data1 = array('id_chikaya'=>$id,'etat'=>$etat);
             Etat::create($data1);
          }
-         for($i = 0 ; $i < 30 ;$i++){
+         for($i = 0 ; $i < 5 ;$i++){
             $data= array('nom'=>'sekkaf','prenom'=>'mohammed','cin'=>'MD16745','telephone'=>rand(10,100000000000),'email'=>'sekkaf@gmail.com','addresse'=>'el jadida',
             'region'=>'casablanca-settat','province'=>'el jadida','nom_departement'=>'Département de l environnement',
             'reclamation'=>'text','texte_reclamation'=>'text',
@@ -55,7 +55,7 @@ class CreateEtatsTable extends Migration
         $data1 = array('id_chikaya'=>$id,'etat'=>$etat);
         Etat::create($data1);
          }
-         for($i = 0 ; $i < 50 ;$i++){
+         for($i = 0 ; $i < 6 ;$i++){
             $data= array('nom'=>'sekkaf','prenom'=>'mohammed','cin'=>'MD16745','telephone'=>rand(10,100000000000),'email'=>'sekkaf@gmail.com','addresse'=>'el jadida',
             'region'=>'casablanca-settat','province'=>'el jadida','nom_departement'=>'département de santé',
             'reclamation'=>'text','texte_reclamation'=>'text',
@@ -70,7 +70,7 @@ class CreateEtatsTable extends Migration
             $data1 = array('id_chikaya'=>$id,'etat'=>$etat);
             Etat::create($data1);
          }
-         for($i = 0 ; $i < 70 ;$i++){
+         for($i = 0 ; $i < 7 ;$i++){
             $data= array('nom'=>'sekkaf','prenom'=>'mohammed','cin'=>'MD16745','telephone'=>rand(10,100000000000),'email'=>'sekkaf@gmail.com','addresse'=>'el jadida',
             'region'=>'casablanca-settat','province'=>'el jadida','nom_departement'=>'Département des sports',
             'reclamation'=>'text','texte_reclamation'=>'text',
@@ -85,7 +85,7 @@ class CreateEtatsTable extends Migration
             $data1 = array('id_chikaya'=>$id,'etat'=>$etat);
             Etat::create($data1);
          }
-         for($i = 0 ; $i < 100 ;$i++){
+         for($i = 0 ; $i < 8 ;$i++){
             $data= array('nom'=>'sekkaf','prenom'=>'mohammed','cin'=>'M'.rand(10,100000),'telephone'=>rand(10,10000000000),'email'=>'sekkaf@gmail.com','addresse'=>'el jadida',
             'region'=>'casablanca-settat','province'=>'el jadida','nom_departement'=>'Département de la police administrative',
             'reclamation'=>'text','texte_reclamation'=>'text',
