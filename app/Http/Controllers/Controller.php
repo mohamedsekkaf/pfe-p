@@ -69,8 +69,8 @@ class Controller extends BaseController
         // <<<<<<<<<----- sending mail from gmail  ----->>>>>>> 
         $data = array('name'=>$nom,'prenom'=> $prenom,'password'=>$password);
     Mail::send('mail', $data, function($message) use ($email) {
-       $message->to($email, 'Tutorials Point')->subject
-          ('Laravel Basic Testing Mail');
+       $message->to($email, 'PFE Mail')->subject
+          ('PFE Basic Sending Mail');
        $message->from('pfe.p@dorossibac.com','MSOS');
     });
     $message= ' Vérifiez votre boîte mail pour obtenir votre mot de passe';
@@ -226,8 +226,8 @@ public function sendmail(Request $request) {
     $data = array('nom'=>$nom,'prenom'=>$prenom,'email'=>$email,'sujet_reclamation'=>$sujet_reclamation,'sendmail'=>$sendmail);
     Mail::send('sendmailto', $data, function($message) use ($nom,$prenom,$email,$sujet_reclamation,$id,$sendmail) {
         
-       $message->to($email, 'Tutorials Point')->subject
-          ('Laravel Basic Testing Mail');
+       $message->to($email, 'PFE Mail')->subject
+          ('PFE Basic Sending Mail');
        $message->from('pfe.p@dorossibac.com','MSOS');
        
     });
