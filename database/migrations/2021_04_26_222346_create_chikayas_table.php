@@ -33,6 +33,7 @@ class CreateChikayasTable extends Migration
             $table->string('password');
             $table->timestamps();
             $table->string('date');
+            $table->string('idtoaddetat');
         });
 
     }

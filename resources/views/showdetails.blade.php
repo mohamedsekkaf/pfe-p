@@ -240,8 +240,8 @@
                                 <input type="hidden" name="id_chikaya" value="{{$r->id_chikaya}}">
                                 <td style="width:90%;"><label class="lab">{{$r->reponse}}</label></td>
                                 <td style="width:10%;">
-                                    <input type="image" src="{{asset('image/delete.png')}}" width="30" alt="delete">
-
+                                    <input type="image" src="{{asset('image/delete.png')}}" width="30" alt="delete"
+                                        onclick="return confirm('Êtes-vous sûr de vouloir supprimer?')">
                                 </td>
                             </form>
                         </tr>
@@ -250,10 +250,24 @@
                     @endforeach
                 </div>
             </div>
+            <br><br>
+            <div class="card cardbox">
+                <div class="card-body">
+                    <h3 class="card-title"><strong style="color:red;"> Supprimer Réclamation</strong></h3>
+                    <br><br>
+                    <form action="{{url('/deletereclamation')}}" method="POST" enctype="multipart/form-data">
+                        @method('post')
+                        @csrf
+                        @foreach($chikaya as $ch)
+                        <input type="hidden" name="id" value="{{$ch->id}}">
+                        @endforeach
+                        <button id="submit" onclick="return confirm('Êtes-vous sûr de vouloir supprimer?')">Supprimer Cette Réclamation</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 
 </div>
-
 
 @endsection('content')

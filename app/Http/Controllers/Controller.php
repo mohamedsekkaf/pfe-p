@@ -48,16 +48,16 @@ class Controller extends BaseController
         $check = $request->input('check');
 
         $password = rand();
+        $idtoaddetat = rand();
 
         $data= array('nom'=>$nom,'prenom'=>$prenom,'cin'=>$cin,'telephone'=>$telephone,'email'=>$email,'addresse'=>$addresse,
         'region'=>$region,'province'=>$province,'nom_departement'=>$nom_departement,
         'reclamation'=>$reclamation,'texte_reclamation'=>$texte_reclamation,
-        'check'=>$check,'password'=>$password ,'date'=>date('Y'));
+        'check'=>$check,'password'=>$password ,'date'=>date('Y'),'idtoaddetat'=>$idtoaddetat);
         Chikaya::create($data);
-        $var1 = Chikaya::all();
-        $id = 0; 
-        foreach($var1 as $c){
-            $id++;
+        $var = Chikaya::where('idtoaddetat',$idtoaddetat)->get();
+        foreach($var as $c){
+            $id=$c->id;
         }
         $etat= 'Le traitement n a pas commencé';
         $data1 = array('id_chikaya'=>$id,'etat'=>$etat);
@@ -68,7 +68,7 @@ class Controller extends BaseController
 
         // <<<<<<<<<----- sending mail from gmail  ----->>>>>>> 
         $data = array('name'=>$nom,'prenom'=> $prenom,'password'=>$password);
-    Mail::send('mail', $data, function($message) use ($email) {
+    Mail::send('mail.mail', $data, function($message) use ($email) {
        $message->to($email, 'PFE Mail')->subject
           ('PFE Basic Sending Mail');
        $message->from('pfe.p@dorossibac.com','MSOS');
@@ -136,8 +136,23 @@ class Controller extends BaseController
     public function traitementetat(Request $request){
         $id = $request->input('id');
         $etat = $request->input('etat');
-        $data = array('etat'=>$etat);
-        DB::table('etats')->where('id_chikaya',$id)->update($data);
+        $data1 = array('etat'=>$etat);
+        // send mail with etat
+        $chikaya = Chikaya::where('id',$id)->get();
+        foreach($chikaya as $ch){
+            $nom = $ch->nom;
+            $prenom = $ch->prenom;
+            $sujet = $ch->reclamation;
+            $email = $ch->email;
+        }
+        $data = array('nom'=>$nom,'prenom'=> $prenom,'sujet'=>$sujet,'etat'=>$etat);
+        Mail::send('mail.sendmailetat', $data, function($message) use ($nom,$prenom,$sujet,$etat,$email) {
+           $message->to($email, 'PFE Mail')->subject
+              ('PFE Basic Sending Mail');
+           $message->from('pfe.p@dorossibac.com','MSOS');
+        });
+        DB::table('etats')->where('id_chikaya',$id)->update($data1);
+        
         return redirect('/showdetails/'.$id);
     }
     public function traitementreponse(Request $request){
@@ -151,14 +166,8 @@ class Controller extends BaseController
     //     return view('/statistique');
     // }
 
-
-
-
     public function statistique()
     {
-
-        
-
         $year = ['2020','2021','2022','2023','2024','2025'];
         $month = ['1','2','3','4','5','6','7','8','9','10','11','12'];
         $chikaya = [];
@@ -224,7 +233,7 @@ public function sendmail(Request $request) {
     $sujet_reclamation = $request->input('sujet_reclamation');
     $sendmail = $request->input('sendmail');
     $data = array('nom'=>$nom,'prenom'=>$prenom,'email'=>$email,'sujet_reclamation'=>$sujet_reclamation,'sendmail'=>$sendmail);
-    Mail::send('sendmailto', $data, function($message) use ($nom,$prenom,$email,$sujet_reclamation,$id,$sendmail) {
+    Mail::send('mail.sendmailto', $data, function($message) use ($nom,$prenom,$email,$sujet_reclamation,$id,$sendmail) {
         
        $message->to($email, 'PFE Mail')->subject
           ('PFE Basic Sending Mail');
@@ -233,6 +242,15 @@ public function sendmail(Request $request) {
     });
     return redirect('/showdetails/'.$id);
  }
- 
+
+//  deletereclamation
+  public function deletereclamation(Request $request){
+      $id = $request->input('id');
+      Chikaya::where('id',$id)->delete();
+      Etat::where('id_chikaya',$id)->delete();
+      Reponse::where('id_chikaya',$id)->delete();
+      $chikaya = Chikaya::orderBy('id','desc')->paginate(10);
+      return view('home',compact('chikaya'));
+  }
 
 }
