@@ -92,7 +92,7 @@ class Controller extends BaseController
 
         // <<<<<<<<<----- sending mail from gmail  ----->>>>>>> 
         $link = 'http://pfe-p.herokuapp.com/'.$idtoaddetat;
-        $data = array('name'=>$nom,'prenom'=> $prenom,'password'=>$password,'idtoaddetat'=>$idtoaddetat);
+        $data = array('name'=>$nom,'prenom'=> $prenom,'password'=>$password,'link'=>$link);
     Mail::send('mail.mail', $data, function($message) use ($email) {
        $message->to($email, 'PFE Mail')->subject
           ('PFE Basic Sending Mail');
