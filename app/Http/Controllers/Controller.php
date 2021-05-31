@@ -91,7 +91,7 @@ class Controller extends BaseController
         $succes = 'Votre Reclamation a été Enregistrer';
         PDF::loadView("pdf",compact('var'))->setPaper('a4', 'landscape')->save(public_path().'/pdfs/'.$idtoaddetat.'.pdf');
         // <<<<<<<<<----- sending mail from gmail  ----->>>>>>> 
-        $link = 'http://pfe-p.herokuapp.com/download/'.$idtoaddetat;
+        $link = 'http://127.0.0.1:8000/download/'.$idtoaddetat;
         $data = array('name'=>$nom,'prenom'=> $prenom,'password'=>$password,'link'=>$link);
     Mail::send('mail.mail', $data, function($message) use ($email) {
        $message->to($email, 'PFE Mail')->subject
