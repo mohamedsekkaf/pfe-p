@@ -8,11 +8,12 @@
 
 </head>
 <body>
-    <nav style="width:100%;height:80px;background-color:blue;">
+    <nav>
     <strong>Hello In Mailbox</strong>
     </nav>
-
-    <h1 >Hi {{$name}} {{$prenom}}</h1>
-    <h1 >this is your password <strong style="color:red;">{{$password}}</strong> </h1>
+    <h1 style="text-align:center;">Bienvenue {{$name}} {{$prenom}}</h1>
+    <h2 style="text-align:center;color:green;">Votre Reclamation a été Enregistrer</h2>
+    <h4 style="text-align:center;">Ceci est votre mot de passe pour suivez votre réclamation : <strong style="color:red;">{{$password}}</strong> </h4>
+    <h4 style="text-align:center;">vérifier ce lien pour télécharger  votre réclamation : {{$link}}</h4>
 </body>
 </html>

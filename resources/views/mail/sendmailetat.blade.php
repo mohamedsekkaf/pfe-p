@@ -10,9 +10,9 @@
     <nav class="nav">
     <strong>Hello In Mailbox</strong>
     </nav>
-    <h1 >Hi {{$nom}} {{$prenom}}</h1>
-    <h4><strong style="color:red;"> Sujet de Réclamation :</strong> {{$sujet}}</h4>
-    <strong style="color:red;">Etat De Votre Réclamtion </strong><br>
-    <p>{{$etat}}</p>
+    <h1 style="text-align:center;" >Bienvenue {{$nom}} {{$prenom}}</h1>
+    <h3 style="text-align:center;"><strong style="color:green;"> Sujet de Réclamation :</strong> {{$sujet}}</h4>
+    <h4 style="text-align:center;color:green;">Etat De Votre Réclamtion </h4>
+    <p style="text-align:center;">{{$etat}}</p>
 </body>
 </html>

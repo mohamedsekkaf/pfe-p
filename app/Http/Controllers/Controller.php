@@ -9,7 +9,8 @@ use DB;
 use Auth;
 use Charts;
 use Mail;
-
+use \PDF;
+use Response;
 use Carbon\Carbon;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
@@ -26,10 +27,33 @@ class Controller extends BaseController
 
     function add(Request $request){
         $request->validate([
-            '',
+            'nom' =>'required',
+            'prenom' =>'required',
+            'cin' =>'required',
+            'email' =>'required',
+            'telephone' =>'required',
+            'addresse' =>'required',
+            'region' =>'required',
+            'province' =>'required',
+            'nom_departement' =>'required',
+            'reclamation' =>'required|min:10',
+            'texte_reclamation' =>'required|min:20',
+            'check' =>'required',
         ],
         [
-            ''=>'',
+            'nom.required'=>'Ce Champ Est Obligatoire',
+            'prenom.required' =>'Ce Champ Est Obligatoire',
+            'cin.required' =>'Ce Champ Est Obligatoire',
+            'email.required' =>'Ce Champ Est Obligatoire',
+            'telephone.required' =>'Ce Champ Est Obligatoire',
+            'addresse.required' =>'Ce Champ Est Obligatoire',
+            'region.required' =>'Ce Champ Est Obligatoire',
+            'province.required' =>'Ce Champ Est Obligatoire',
+            'nom_departement.required' =>'Ce Champ Est Obligatoire',
+            'reclamation.required' =>'Ce Champ Est Obligatoire',
+            'reclamation.min'=>'Ce Champ doit contenir au moins 10 caractères',
+            'texte_reclamation.required' =>'Ce Champ Est Obligatoire',
+            'texte_reclamation.min'=>'Ce Champ doit contenir au moins 20 caractères',
         ]);
         $nom = $request->input('nom');
         $prenom = $request->input('prenom');
@@ -65,9 +89,10 @@ class Controller extends BaseController
         // $data2  = array('id_chikaya'=>$id,'reponse'=>'non');
         // Reponse::create($data2);
         $succes = 'Votre Reclamation a été Enregistrer';
-
+        PDF::loadView("pdf",compact('var'))->setPaper('a4', 'landscape')->save(public_path().'/pdfs/'.$idtoaddetat.'.pdf');
         // <<<<<<<<<----- sending mail from gmail  ----->>>>>>> 
-        $data = array('name'=>$nom,'prenom'=> $prenom,'password'=>$password);
+        $link = 'http://pfe-p.herokuapp.com/download/'.$idtoaddetat;
+        $data = array('name'=>$nom,'prenom'=> $prenom,'password'=>$password,'link'=>$link);
     Mail::send('mail.mail', $data, function($message) use ($email) {
        $message->to($email, 'PFE Mail')->subject
           ('PFE Basic Sending Mail');
@@ -145,7 +170,8 @@ class Controller extends BaseController
             $sujet = $ch->reclamation;
             $email = $ch->email;
         }
-        $data = array('nom'=>$nom,'prenom'=> $prenom,'sujet'=>$sujet,'etat'=>$etat);
+
+        $data = array('nom'=>$nom,'prenom'=> $prenom,'sujet'=>$sujet,'etat'=>$etat,'chikaya'=>$chikaya);
         Mail::send('mail.sendmailetat', $data, function($message) use ($nom,$prenom,$sujet,$etat,$email) {
            $message->to($email, 'PFE Mail')->subject
               ('PFE Basic Sending Mail');
@@ -252,5 +278,16 @@ public function sendmail(Request $request) {
       $chikaya = Chikaya::orderBy('id','desc')->paginate(10);
       return view('home',compact('chikaya'));
   }
+
+// download pdf 
+public function download($idtoaddetat){
+    $file= public_path(). '/pdfs/'.$idtoaddetat.'.pdf';
+
+        $headers = array(
+                  'Content-Type: application/pdf',
+                );
+    
+        return Response::download($file, $idtoaddetat.'.pdf', $headers);
+}
 
 }

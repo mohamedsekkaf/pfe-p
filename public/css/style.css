@@ -50,6 +50,41 @@ ul li a:hover{
 }
 .chikaya{
     width: 100px;
+    animation: holla 5s;
+    transform: scale(1.0);
+    transition: 970ms;
+    cursor: pointer;
+}
+.chikaya:hover{
+    animation: holla1 5s;
+    transform: scale(1.0);
+    transition: 970ms;
+}
+@keyframes holla1{
+    0%{
+        transform: rotate(0deg) translateY(12px);;
+     
+    }
+    50%{
+        transform: rotate(-60deg) translateY(-12px);;
+
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes holla{
+    0%{
+        transform: rotate(0deg) translateY(12px);;
+     
+    }
+    50%{
+        transform: rotate(-60deg) translateY(-12px);;
+
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }
 .card{
     text-align: center;

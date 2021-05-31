@@ -23,6 +23,8 @@ Route::get('/suivez','Controller@suivez');
 Route::get('/notfound','Controller@notfound');
 Route::post('/check','Controller@check');
 Route::get('/result','Controller@result');
+Route::get('/download/{idtoaddetat}','Controller@download');
+
 Route::group(['middleware' => ['auth']], function(){
 Route::get('/home','Controller@home');
 Route::get('logout', 'Controller@logout');

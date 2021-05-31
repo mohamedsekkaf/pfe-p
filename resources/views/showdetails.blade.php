@@ -6,7 +6,7 @@
     @foreach($chikaya as $ch)
     <div class="card">
         <div>
-            <img class="chikaya1" src="{{asset('image/chikaya.png')}}" alt="">
+            <img class="chikaya1 chikaya" src="{{asset('image/chikaya.png')}}" alt="">
         </div>
         <div class="card-body">
             <br>

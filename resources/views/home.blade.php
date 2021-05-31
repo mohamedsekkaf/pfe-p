@@ -71,7 +71,7 @@
                 <h4 class="card-title"><i style="color:red">Sujet</i> : {{$ch->reclamation}}</h4>
                 <table>
                     <tr>
-                        <td> <img class="chikaya1" src="{{asset('image/chikaya.png')}}" alt="chikaya"></td>
+                        <td> <img class="chikaya1 chikaya" src="{{asset('image/chikaya.png')}}" alt="chikaya"></td>
                         <td>
                             <table>
                                 <tr>
@@ -88,7 +88,7 @@
                             </table>
                         </td>
                     </tr>
-                </table>
+                </table><br>
                 <a href="{{url('/showdetails')}}/{{$ch->id}}"><input class="btn1" type="button" value="voir"></a>
             </div>
         </div>
@@ -99,8 +99,8 @@
         <div class="card cardphone cardbox">
             <div class="card-body">
                 <div>
-                    <img class="chikaya1" src="{{asset('image/chikaya.png')}}" alt="chikaya">
-                </div>
+                    <img class="chikaya1 chikaya" src="{{asset('image/chikaya.png')}}" alt="chikaya">
+                </div><br>
                 <h4 class="card-title"><i style="color:red">Sujet :</i> {{$ch->reclamation}}</h4>
                 <table>
                     <tr>
