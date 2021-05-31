@@ -91,7 +91,7 @@ class Controller extends BaseController
         $succes = 'Votre Reclamation a été Enregistrer';
 
         // <<<<<<<<<----- sending mail from gmail  ----->>>>>>> 
-        $link = 'http://pfe-p.herokuapp.com/'.$idtoaddetat;
+        $link = url('/'.$idtoaddetat);
         $data = array('name'=>$nom,'prenom'=> $prenom,'password'=>$password,'link'=>$link);
     Mail::send('mail.mail', $data, function($message) use ($email) {
        $message->to($email, 'PFE Mail')->subject
