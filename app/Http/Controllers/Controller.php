@@ -89,10 +89,10 @@ class Controller extends BaseController
         // $data2  = array('id_chikaya'=>$id,'reponse'=>'non');
         // Reponse::create($data2);
         $succes = 'Votre Reclamation a été Enregistrer';
-        PDF::loadView("pdf",compact('var'))->setPaper('a4', 'landscape')->save(public_path().'/pdfs/'.$idtoaddetat.'.pdf');
+
         // <<<<<<<<<----- sending mail from gmail  ----->>>>>>> 
-        $link = 'http://127.0.0.1:8000/download/'.$idtoaddetat;
-        $data = array('name'=>$nom,'prenom'=> $prenom,'password'=>$password,'link'=>$link);
+        $link = 'http://pfe-p.herokuapp.com/'.$idtoaddetat;
+        $data = array('name'=>$nom,'prenom'=> $prenom,'password'=>$password,'idtoaddetat'=>$idtoaddetat);
     Mail::send('mail.mail', $data, function($message) use ($email) {
        $message->to($email, 'PFE Mail')->subject
           ('PFE Basic Sending Mail');
@@ -100,6 +100,10 @@ class Controller extends BaseController
     });
     $message= ' Vérifiez votre boîte mail pour obtenir votre mot de passe';
         // <<<<<<<<<----- sending mail from gmail  ----->>>>>>> 
+        // <<<<<<<<<-----     generate pdf    --- -<  <<<<<<
+        PDF::loadView("pdf",compact('var'))->setPaper('a4', 'landscape')->save(public_path().'/pdfs/'.$idtoaddetat.'.pdf');
+
+         // <<<<<<<<<-----     generate pdf    --- -<  <<<<<<
         return view('/succes',compact('succes','message'));
     }
     function succes(){
