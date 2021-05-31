@@ -77,62 +77,62 @@
         <table style="width:100%;">
             <tr>
                 <td style="width:20%;">Votre Nom</td>
-                <td style="width:80%;"><input style="width:100%;" type="text" name="" value="{{$v->nom}}"></td>
+                <td style="width:80%;"><input style="width:100%;text-align:center;border-radius:10px;" type="text" name="" value="{{$v->nom}}"></td>
             </tr>
             <tr><td><br></td></tr>
             <tr>
                 <td style="width:20%;">Votre Prenom</td>
-                <td style="width:80%;"><input style="width:100%;" type="text" name="" value="{{$v->prenom}}"></td>
+                <td style="width:80%;"><input style="width:100%;text-align:center;border-radius:10px;" type="text" name="" value="{{$v->prenom}}"></td>
             </tr>
             <tr><td><br></td></tr>
             <tr>
                 <td style="width:20%;">Votre CIN</td>
-                <td style="width:80%;"><input style="width:100%;" type="text" name="" value="{{$v->cin}}"></td>
+                <td style="width:80%;"><input style="width:100%;text-align:center;border-radius:10px;" type="text" name="" value="{{$v->cin}}"></td>
             </tr>
             <tr><td><br></td></tr>
             <tr>
                 <td style="width:20%;">Votre Telephone</td>
-                <td style="width:80%;"><input style="width:100%;" type="text" name="" value="{{$v->telephone}}"></td>
+                <td style="width:80%;"><input style="width:100%;text-align:center;border-radius:10px;" type="text" name="" value="{{$v->telephone}}"></td>
             </tr>
             <tr><td><br></td></tr>
             <tr>
                 <td style="width:20%;">Votre Email</td>
-                <td style="width:80%;"><input style="width:100%;" type="text" name="" value="{{$v->email}}"></td>
+                <td style="width:80%;"><input style="width:100%;text-align:center;border-radius:10px;" type="text" name="" value="{{$v->email}}"></td>
             </tr>
             <tr><td><br></td></tr>
             <tr>
                 <td style="width:20%;">Votre Addresse</td>
-                <td style="width:80%;"><input style="width:100%;" type="text" name="" value="{{$v->addresse}}"></td>
+                <td style="width:80%;"><input style="width:100%;text-align:center;border-radius:10px;" type="text" name="" value="{{$v->addresse}}"></td>
             </tr>
             <tr><td><br></td></tr>
             <tr>
-                <td style="width:20%;">Votre Region</td>
-                <td style="width:80%;"><input style="width:100%;" type="text" name="" value="{{$v->region}}"></td>
+                <td style="width:20%;">Region</td>
+                <td style="width:80%;"><input style="width:100%;text-align:center;border-radius:10px;" type="text" name="" value="{{$v->region}}"></td>
             </tr>
             <tr><td><br></td></tr>
             <tr>
-                <td style="width:20%;">Votre Province</td>
-                <td style="width:80%;"><input style="width:100%;" type="text" name="" value="{{$v->province}}"></td>
+                <td style="width:20%;">Province</td>
+                <td style="width:80%;"><input style="width:100%;text-align:center;border-radius:10px;" type="text" name="" value="{{$v->province}}"></td>
             </tr>
             <tr><td><br></td></tr>
             <tr>
-                <td style="width:20%;">Votre Département</td>
-                <td style="width:80%;"><input style="width:100%;" type="text" name="" value="{{$v->nom_departement}}"></td>
+                <td style="width:20%;">Département</td>
+                <td style="width:80%;"><input style="width:100%;text-align:center;border-radius:10px;" type="text" name="" value="{{$v->nom_departement}}"></td>
             </tr>
             <tr><td><br></td></tr>
             <tr>
                 <td style="width:20%;">Votre Sujet de Réclamation</td>
-                <td style="width:80%;"><input style="width:100%;" type="text" name="" value="{{$v->reclamation}}"></td>
+                <td style="width:80%;"><input style="width:100%;text-align:center;border-radius:10px;" type="text" name="" value="{{$v->reclamation}}"></td>
             </tr>
             <tr><td><br></td></tr>
             <tr>
                 <td style="width:20%;">Votre Texte de Réclamation</td>
-                <td style="width:80%;"><input style="width:100%;" type="text" name="" value="{{$v->texte_reclamation}}"></td>
+                <td style="width:80%;"><input style="width:100%;text-align:center;border-radius:10px;" type="text" name="" value="{{$v->texte_reclamation}}"></td>
             </tr>
             <tr><td><br><br></td></tr>
             <tr>
                 <td style="width:20%;">Date De Création</td>
-                <td style="width:80%;"><input style="width:100%;" type="text" name="" value="{{$v->created_at}}"></td>
+                <td style="width:80%;"><input style="width:100%;text-align:center;border-radius:10px;" type="text" name="" value="{{$v->created_at}}"></td>
             </tr>
         </table>
         @endforeach
