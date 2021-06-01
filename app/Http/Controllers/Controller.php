@@ -101,7 +101,7 @@ class Controller extends BaseController
     $message= ' Vérifiez votre boîte mail pour obtenir votre mot de passe';
         // <<<<<<<<<----- sending mail from gmail  ----->>>>>>> 
         // <<<<<<<<<-----     generate pdf    --- -<  <<<<<<
-        PDF::loadView("pdf",compact('var'))->setPaper('a4', 'landscape')->save(public_path().'/pdfs/'.$idtoaddetat.'.pdf');
+        PDF::loadView("pdf",compact('var'))->setPaper('A4', 'landscape')->save(public_path().'/pdfs/'.$idtoaddetat.'.pdf');
 
          // <<<<<<<<<-----     generate pdf    --- -<  <<<<<<
         return view('/succes',compact('succes','message'));
