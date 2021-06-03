@@ -162,7 +162,7 @@
                             <tr>
                                 <td class="td1 tdstyle1">Les Reponses</td>
                                 <td class="td2 tdstyle"><textarea placeholder="Entrez Un Réponse" class="form-control"
-                                        name="reponse" id="input1" cols="10" rows="6"></textarea></td>
+                                        name="reponse" id="input1" cols="10" rows="6" required></textarea></td>
                             </tr>
                         </table>
                         <br>
@@ -183,7 +183,7 @@
                             <tr>
                                 <td class="td1 tdstyle1">Email Text</td>
                                 <td class="td2 tdstyle1"><textarea name="sendmail" class="form-control" id="input1"
-                                        placeholder="Entrez Votre Contenue De Mail" cols="10" rows="6"></textarea></td>
+                                        placeholder="Entrez Votre Contenue De Mail" cols="10" rows="6" required></textarea></td>
                             </tr>
                         </table>
                         <br>

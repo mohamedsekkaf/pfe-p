@@ -50,10 +50,7 @@ ul li a:hover{
 }
 .chikaya{
     width: 100px;
-    animation: holla 5s;
-    transform: scale(1.0);
-    transition: 970ms;
-    cursor: pointer;
+
 }
 .chikaya:hover{
     animation: holla1 5s;
